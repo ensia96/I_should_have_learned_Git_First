@@ -11,7 +11,7 @@
         <li><a href="index.php?id="></a></li>
     </ol>
     <h2><?=$_GET['id']?></h2>
-    <?=nl2br(상세내용띠)?>
-    <p>노오력 : <?=strlen(상세내용띠)?> 점</p>
+    <?=nl2br(file_get_contents('data/'.$_GET['id']))?>
+    <p>노오력 : <?=strlen(file_get_contents('data/'.$_GET['id']))?> 점</p>
 </body>
 </html>
