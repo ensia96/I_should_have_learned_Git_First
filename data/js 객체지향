@@ -1,0 +1,71 @@
+추상화(abstract / 단순화) 와 부품화(분할) 를 추구한다.
+ - 작업 분할 ( grooping , categorizing ) / 캡슐화 ( encapsulation ) / 은닉화 ( information hiding )
+
+prototype
+함수 생성 -> 원형객체도 생성 / 함수 func ( ) ; / 원형객체 prototype
+원형객체에 접근 - prototype 속성 이용 / func . Prototype
+원형 객체 - 원본함수정보, 링크를 포함 / constructor == new func(); / prototype link ( __proto__ )
+new func ( ) ; - 원본객체정보를 파생하여 객체 생성 / ( 함수만이 생성자가 될 수 있다. )
+	이를 통해 함수의 정보를 변수에 담을 수 있다. / var vari = new func ( ) ;
+
+instance 인스턴스 / object 객체
+
+class
+class child extends parent {				->parent 클래스를 상속하는 child 클래스를 생성한다.
+	constructor ( property-c ) {			->constructor 메소드는 하나만 사용가능
+		super( property-p ) ;			->부모클래스의 생성자를 호출한다.
+		내용 ; }						->부모클래스에는 영향을 주지 않는다.
+	func-c ( ) {						->function 키워드를 사용하지 않는다.
+		return super . func-p ( ) + 내용 ; }	->부모클래스의 객체를 호출한다.
+}
+
+inheritance
+sub의 부모를 super로 지정할 수 있다.
+var sub = Object . create ( super) / sub . __proto__ = super
+
+정보를 꺼내오는 대상 = 부모객체 정보를 담는 대상 = 자식객체
+	자식객체의 변화는 부모객체에게 영향을 줄 수 없다.
+prototype chain 은 상속이 연쇄된 상태이고, 최상위 객체는 object 이다.
+	본인의 원형객체에서 가장먼저 정보를 적용한다.
+
+call
+함수의 소속객체를 지정
+상속관계에 있지 않은 두 함수에서 a함수의 내부에 call 메소드를 사용하면,
+첫번째 인자에 this 를 넣어 this 의 대상을 a함수라는 객체로 지정하고,
+나머지는 매개변수를 넣어 call 한 함수의 내용을 가져올 수 있다.
+
+bind
+함수에 소속객체를 지정하여 새로운 함수를 파생
+
+표준 내장 객체의 확장
+
+표준 내장 객체
+standard built-in object / 언어엔진 개발자가 언어 사용자에게 제공하는 기능
+object, function, array, string, boolean, number
+math, date, regexp - javascript 의 호스트환경에선 더 있다.
+
+사용자 정의 객체
+프로그램 개발자가 프로그램 사용자에게 제공하는 기능
+표준 내장 객체의 원형객체에 메소드를 만들고, 변수에 할당하여 확장하는 방법도 있다.
+상속받은 property 와 객체 자체 property 구분 / hasOwnProperty
+
+primitive
+원시 데이터타입 / 객체가 아닌 데이터들
+number, string, boolean, null, undefined
+이런 데이터 타입들도 메소드를 사용할 수 있다.
+메소드를 실행하는 구간에서는 레퍼객체 ( wrapper object ) 가 객체화시켜주기 때문이다.
+null, undefined 는 레퍼객체를 갖지 않는다.
+
+duplication							reference
+복제 / 원시데이터는 할당하면 값을 복제한다.		참조 / 객체는 할당하면 객체의 정보를 참조시킨다
+var a = 1 ;								var a = { id : 1 } ;
+var b = a ;							var b = a ;
+b = 2 ;								b . Id = 2 ;
+이때, a 를 호출하면 1이 나온다.				이때 a 의 id 를 호출하면 2가 나온다.
+
+var a = 1 ;								var a = { id : 1 } ;
+function func ( b ) {						function func ( b ) {
+	b = 2 ;								b . Id = 2 ;
+}									}
+func ( a ) ;							func ( a ) ;
+이때, a 를 호출하면 1이 나온다.				이때 a 의 id 를 호출하면 2가 나온다.

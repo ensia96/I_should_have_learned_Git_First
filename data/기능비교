@@ -1,0 +1,67 @@
+javascript
+변수선언 var
+출력
+write
+console.log
+사용자 입력
+prompt
+confirm
+element 개수 변수.length
+글자 수 변수.length
+슬라이싱 변수( i, j )
+index 값 list [ n ]
+
+list
+삭제
+맨앞 shift
+맨뒤 pop
+추가 push, concat, reshift, splice
+정렬
+정순 sort
+역순 reverse
+
+선택자
+document 현재문서
+queryselctor 선택자 ( + all : 모두 )
+this 소속된 객체
+
+python
+선언 import
+함수정의 def
+출력 print
+사용자 입력 input
+element 개수 len(변수)
+글자 수 len(변수)
+슬라이싱 변수[ i : j ] 
+index 값 list [ n ]
+
+list
+개수 count
+삭제
+	index : del
+	값 : remove
+추가 append
+
+자료형변환 자료형( )
+
+php
+출력
+print
+echo
+
+element 개수 count (변수)
+글자 수 strlen (변수)
+
+index 값 변수[ n ]
+
+list
+추가 array_push
+
+데이터타입 var_dump
+
+$dir = scandir 경로
+
+컨테이너 = 경로 . 문서목록
+<?php echo ' a ' ?>  = <?=a?>
+
+$ _ GET [ ] url parameter 가져오기

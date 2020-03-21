@@ -1,0 +1,72 @@
+conditional 조건문 if
+	a 에는 무조건 boolean
+	a 가 True, b 실행
+	a 가 False, c가 True, d 실행
+	a 가 False, c도 False, e 실행
+
+	javascript
+		if ( a ) {
+			b
+		} else if ( c ){
+			d
+		} else {
+			e
+		}
+
+	python
+		if a : 
+			b
+		elif c
+			d
+		else :
+			e
+
+	php
+		if ( a ) {
+			b
+		} else if ( c ){
+			d
+		} else {
+			e
+		}
+
+loop, iterate 반복문 for, while
+	break : 반복문 종료
+	continue : 제외하고 실행
+
+	javascript
+		for ( var key in 객체 ) {
+			명령 ;
+		}
+	- - - - - - - - - - - - - - - - - - - - - - 
+		var i = 0 ;
+		while ( i < n ) {
+			명령 ;
+			i = i + 1;
+		}
+	- - - - - - - - - - - - - - - - - - - - - - 
+		for ( 초기값; 조건값; 증감값 ) {
+			명령 ;
+		}
+
+	python
+		for 변수 in 배열 : 
+			명령 ;
+	- - - - - - - - - - - - - - - - - - - - - - 
+		 i = 0
+		while ( i < n ) {
+			명령 ;
+			 i = i + 1;
+		}
+
+	php
+		for ( 초기값; 조건값; 증감값 ) {
+			명령 ;
+		}
+	- - - - - - - - - - - - - - - - - - - - - - 
+		$i = 0			-> 초기값
+		while ( $i < n ) {	-> 조건값
+			명령 ;
+			$i = $i + 1;	-> 증감값
+
+conprehension : 정리 필요함

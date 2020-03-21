@@ -1,0 +1,40 @@
+number 숫자형
+	int 정수형
+	float 실수형
+
+string 문자형
+	' : single quoted
+	" : double quoted
+
+boolean 불 자료형
+	참/거짓 / null = false
+
+variable 변수
+	python : 숫자로 시작할 수 없다.
+
+	php : 무조건 $로 시작 / object 객체 취급
+
+container 목록 /element 구성요소 ( 원소 )
+	javascript : array [ ] 배열 / 배열 안에 함수를 저장할 수도 있다.
+
+	python : list [ ] 순서있는목록 / tuple ( ) 절대값 목록 / range( i , j ) [ i ~ ( j - 1 ) ]
+
+	php : array ( ) 배열 / $a = array ( 'b', 'c', 'd' )
+
+mapping key, value 값을 묶어 저장하는 개체
+	javascript : object { } 객체
+		- 함수도 객체이다 ( key에 함수, value에 명령 )
+			= 자체로도 값이될 수 있다.
+			= 변수, 매개변수 도 될 수 있다.
+			= return ( 반환값 ) 도 될 수 있다.
+		var 객체 = {
+			“key1” : “value1” ,
+			“key2” : “value2”
+		}
+		객체 [ “ k e y ” ] = “ value ”
+		객체 . key = “ value ”
+		value 값 = 객체 [ key ]
+
+	python : dictionary { }
+
+	php : associative 연관배열 ( key 값이 숫자가 아닌 배열 )

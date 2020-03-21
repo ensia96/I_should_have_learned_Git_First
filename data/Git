@@ -1,0 +1,121 @@
+꼼수 : git log --all --graph --oneline
+
+기능
+	- version : 버젼관리 / 핵심 : 비교
+	- back up : 백업 / git hosting ( 원격 저장소 )
+	- collaborate : 협업
+
+개념
+	 - 정보의 상태
+		- working tree : 파일을 수정하는 곳 ( 수정작업 진행 )
+		- staging area : 파일을 업로드하는 곳 ( 파일들을 선택하여 새로운 버젼을 업로드 )
+		- repository : 저장소 ( .git 폴더 )
+
+- git hosting ( 원격 저장소 ) - remote repository
+- local repository : 실제 작업하여 버젼을 생성하는 컴퓨터
+- remote repository : upload ( push ) 하여 별도로 저장하는 computer
+- push : local repository 에서 remote repository 로 업로드 / 동기화
+- clone : remote repository 에서 local repository 로 다운로드
+- pull : remote repository 에서 local repository 로 동기화
+- fetch : 
+
+용어
+HEAD : 현재위치 ( detached : commit 에 있는 상태 )
+master : 최신 버젼 branch
+commit : 파일을 업데이트 ( 버젼 )
+branch : 파일을 파생(분화)
+merge : branch 를 병합
+	- 3way merge 방식 : 병합하려는 branch 들과 base 를 비교하여 병합
+conflict : branch 를 합치려할때 같은 파일의 같은 부분을 수정한 것이 충돌
+	-> 충돌파일을 확인하여 수정하고,  다시 add 한 뒤 commit 하면 된다.
+base : 공통의 부모데이터
+
+명령어
+
+ - init directory
+	: initialize repository / directory를 저장소로 지정 -> .git = git repository
+
+ - status
+	: git working tree status / working tree 의 현재 상태를 응답
+
+ - log
+	: show version / 기록보기
+
+- —stat
+	: 버젼 별 파일목록 보기
+	- p : 버젼 별 차이점 보기
+
+ - add
+	: add to staging area / working tree 에서 작업한 내용을 staging area 로 등록
+	- . 으로 디렉토리 내 모든문서 add 가능
+
+ - commit
+	: create version / staging area 에서 repository 로 제출
+	- a : commit 할 때 add 를 같이 진행 ( 새로 생성된 파일은 add 를 직접 해야함 )
+	- m “ “ : commit message ( 버젼이름 ) 작성
+	- —amend : 커밋한 내용 수정
+
+ - diff
+	: show changes / working tree 에서 변경된 ( 작업한 ) 내용 보기
+
+ - checkout
+	: 원하는 위치, 시점으로 이동 ( HEAD 의 위치로 이동 )
+	-  commit id = 그 상태로 동기화, ‘master’  = 최신상태로 동기화
+
+ - reset
+	: 원하는 버젼 이후의 최신파일들을 삭제하여 원하는 버젼을 최신버젼으로 만듦
+		# branch 가 파생된 버젼을 바꾸는 것.
+	- commit id = 그 버젼으로 리셋
+		# 다른사람들과 공유되기 전 버젼만 리셋할 것. ( 파일 엉킴 / 오류 방지 )
+
+ - revert
+	: 기존의 커밋을 두고, 변경하기 전 버젼상태로 새로 만들기
+	- commit id = 그 버젼의 변경사항을 폐기
+		# 리버트는 최신버젼으로부터 역순으로 진행할 것. ( 충돌 / 오류 방지 )
+
+ - merge
+	: 현재 HEAD branch 에서 다른 branch 를 병합
+
+ - remote
+	: 원격 저장소 명령 ( 그냥 입력 : 원격 저장소 목록 확인 )
+	- add 이름 주소 : 원격 저장소 추가 ( 연결 )
+	- v : 원격저장소 목록과 주소를 같이 표시
+
+- push
+	: local repository 의 내용을 remote repository 로 업로드
+		# 최초 업로드 시 에러문구에 뜨는 명령 실행 -> 계정 아이디, 비밀번호 입력
+	- u 지역저장소 원격저장소 : 저장소 연결 ( 이름이 다를 때 최초만 )
+
+- clone 주소
+	: remote repository 의 내용을 local repository 로 복제 ( 최초만 )
+	- 명령을 실행시킨 디렉토리에 생성
+	- 뒤에 이름을 붙이면 원하는 이름으로 디렉토리 생성
+
+- pull
+	: remote repository 의 내용을 local repository 로 다운로드
+		# fetch + merge 최신버젼
+
+ - fetch
+	: 원격저장소 동기화 ( 원격저장소에 있는 지역저장소의 master 를 가져옴 )
+	- git 폴더 안의 FETCH_HEAD 파일에 merge 한 최신버젼이 기록되어있음
+	- git fetch ; git merge FETCH_HEAD 로 최신버젼 동기화까지 가능
+	- 오픈소스 방식일때 필요할 수 있음 / 권한없이 프로젝트에 참여 가능
+
+ - format-patch commit id
+	: commit id 이후 수정된 버젼에 대한 수정내역을 파일화 ( patch ) 할 수 있음
+	: patch 파일을 오픈소스 프로젝트 참여자에게 보내는 방식으로 참여 할 수 있음
+	 - am 파일이름 : patch 파일의 수정내역을 추가하여 자식버젼으로 만들기
+		# * . patch : 모든 patch 파일 지정
+	- 3 : 3 way merge 방식으로 패치
+	- i : interactive mode / 각각의 patch 파일마다 적용할 내용 지정
+		# v : 변경내용 보기
+		# y : 자동으로 커밋까지 진행
+		# e : commit message 를 수정
+
+
+
+ - compare : 원본의 저장소와 자신의 저장소 내용을 비교
+ - pull request : 자신이 포크하여 작업한 내용을 원본 작업자에게 확인 요청
+
+clone : 같은 저장소에서
+fork : 다른 저장소에서 복제해와서 자신의 저장소에

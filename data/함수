@@ -1,0 +1,60 @@
+input 입력
+	parameter 매개변수
+	argument 인자
+
+output 출력
+	return
+
+scope 유효범위 / 변수의 수명
+	local 지역변수 : 함수 안에서 변수를 선언, 그 함수 전체를 ( ) 로 묶어 익명함수로 전환하여 모듈화 할 수 있다.
+	global 전역변수
+
+	scoping 정적유효범위 ( static, lexical )
+		함수가 선언된 시점에 유효범위가 설정됨
+
+synchronous 동기적
+	순서대로만 작업이 가능함
+asynchronous 비동기적
+	일부를 따로 처리하고, 다른 작업을 할 수 있음
+closure 클로져
+	내부함수에서 외부함수의 변수에 접근할 수 있음 ( 이미 종료된 process 더라도 )
+private variable
+	외부요인으로 생긴 변수 변경으로 인한 logic 의 붕괴를 막을 수 있음
+	특정 기능으로만 출력, 변경이 되기 때문에, 내외부적으로 문제를 덜 일으킴
+
+recursive 재귀함수
+	함수의 내용안에 함수가 들어가있는 것.
+
+callback
+	다른 코드에 인수로써 넘겨줄 수 있는 실행 가능한 코드
+
+	function 들어가 ( 나왔어 ) {
+		종료조건 혹은 기반조건 ;
+		return 들어가 ( 나왔어 ) ;
+	}
+
+언어별 함수 정의법
+
+	javascript
+		function 함수 ( ) {
+			명령
+		}
+
+		var 함수 = function ( ) {
+			명령
+		}
+
+	python
+		def 함수 ( ) :
+			명령
+
+	php
+		function 함수 ( ) {
+			명령
+
+		}
+
+결과값 지정 후 명령중지
+	javascript : return ' ' ;
+	python : return ' '
+	php : return ' ' ;

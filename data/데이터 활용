@@ -1,0 +1,61 @@
+index
+	정보들의 주소값 ( 색인 )
+
+	javascript
+		범위 : 0 ~ n
+		변수( i ) : i 주소값의 정보 지정
+		변수( i, j ) : i ~ ( j - 1 ) 사이의 정보
+
+	python
+		범위 : 0 ~ n / -n ~ -1
+		변수[ i ] : i 주소값의 정보 지정
+		변수[ i : j ] : i ~ ( j - 1 ) 사이의 정보
+
+slice
+	필요한 구간의 정보값 지정
+
+operator 연산자
+	arithmetic 산술연산자
+		 +, -, *, /
+		**(제곱), //(몫), %(나머지)
+	assignment 할당연산자
+		=, +=, -=, *=, /= -> 예 ) a += b -> a = a + b
+	comparison 비교연산자
+		==, <, >
+	증감연산자
+		++ i,  -- i -> 증감 후 실행
+		 i ++, i -- -> 실행 후 증감
+
+	javascript
+		logical 논리연산자 : &&, ||, !
+		comparison 비교연산자 : ==(동등) 과 ===(일치) 구분
+
+	python
+		logical 논리연산자 and, or, not
+		membership 포함연산자 in, not in
+
+	php
+		concatenation 연쇄연산자 - a . b
+
+escape
+	기호를 문법에서 벗어나게 하는 방법
+	기호앞에 '\' / 예) 줄바꿈 \n
+
+docstring
+	줄바꿈있는 문자형을 그대로 표시 ( JavaScript - X )
+
+	python
+		" 이나 ' 를 3개 사용
+
+	php
+		nl2br ( )
+
+python 만 있는건가?
+
+	format 여러 위치에 이름, 값을 지정
+		positional
+			위치지정 { }
+			값지정 . format ( 값 1 , 값 2 , … )
+		named
+			이름지정 { 이름 1 } , { 이름 2 }
+			값지정 . format ( 이름 1 = “ 값 1 ” , 이름 2 = “ 값 2 ” )
