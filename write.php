@@ -34,10 +34,13 @@ function contents() {
         <title><?=title();?></title>
     </head>
     <body>
-        <h1><a href="index.php">문서띠</a></h1>
+        <h1><a href="index.php">글쓰기</a></h1>
         <ol><?=title_list();?></ol>
-        <p><a href="write.php">글쓰기</a></p>
-        <h2><?=title();?></h2>
-        <?=contents();?>
+        <h2>돌아가려면 글쓰기를 누르세요</h2>
+        <form action="write_.php" method="post">
+            <p><input type="text" name="title" placeholder="여기에 제목을 적어주세요." size="55"></p>
+            <p><textarea name="contents_" placeholder="여기엔 내용을 적어주세요. &#13;&#10;(오른쪽 밑을 당기면 더 크게볼 수 있어요~)" cols="53" rows="10"></textarea></p>
+            <p><input type="submit" value="저장 쓰 !"></p>
+        </form>
     </body>
 </html>
