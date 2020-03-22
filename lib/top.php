@@ -6,6 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><?=title();?></title>
         <style>
+            a {
+                color:black;
+                text-decoration:none;
+            }
+            h1, h2, h3 {
+                font: Tahoma, cursive;
+            }
+            pre {
+                font:13px Tahoma, cursive;
+            }
             .wrap {
                 width:100%;
 	            box-sizing:border-box;
