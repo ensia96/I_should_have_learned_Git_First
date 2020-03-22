@@ -11,12 +11,12 @@ new func ( ) ; - 원본객체정보를 파생하여 객체 생성 / ( 함수만�
 instance 인스턴스 / object 객체
 
 class
-class child extends parent {				->parent 클래스를 상속하는 child 클래스를 생성한다.
-	constructor ( property-c ) {			->constructor 메소드는 하나만 사용가능
-		super( property-p ) ;			->부모클래스의 생성자를 호출한다.
+class child extends parent {					->parent 클래스를 상속하는 child 클래스를 생성한다.
+	constructor ( property-c ) {				->constructor 메소드는 하나만 사용가능
+		super( property-p ) ;				->부모클래스의 생성자를 호출한다.
 		내용 ; }						->부모클래스에는 영향을 주지 않는다.
 	func-c ( ) {						->function 키워드를 사용하지 않는다.
-		return super . func-p ( ) + 내용 ; }	->부모클래스의 객체를 호출한다.
+		return super . func-p ( ) + 내용 ; }		->부모클래스의 객체를 호출한다.
 }
 
 inheritance
