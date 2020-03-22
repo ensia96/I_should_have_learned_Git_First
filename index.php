@@ -19,10 +19,12 @@ function title() {
 }
 function contents() {
     if (isset($_GET['id'])) {
-        echo nl2br(file_get_contents('data/'.$_GET['id']));
-        echo "<p>노오력 : ".strlen(file_get_contents('data/'.$_GET['id']))."점</p>";
+        echo "<pre>".file_get_contents('data/'.$_GET['id'])."</pre>";
+        if (basename($_SERVER['PHP_SELF'])== "index.php") {
+            echo "<p>노오력 : ".strlen(file_get_contents('data/'.$_GET['id']))."점</p>";
+        }
     } else {
-        echo "Git 공부 늦게해서 지금부터 공부내용 정리한거 올리는 사람입니다.";
+        echo "Git 공부 늦게해서 공부한 내용 정리한거 올리는 사람입니다.";
     }
 }
 ?>
@@ -37,6 +39,10 @@ function contents() {
         <h1><a href="index.php">문서띠</a></h1>
         <ol><?=title_list();?></ol>
         <p><a href="write.php">글쓰기</a></p>
+        <?php
+        if (isset($_GET['id'])) { ?>
+            <a href="edit.php?id=<?=$_GET['id']?>">수정쓰</a>
+        <?php }?>
         <h2><?=title();?></h2>
         <?=contents();?>
     </body>
