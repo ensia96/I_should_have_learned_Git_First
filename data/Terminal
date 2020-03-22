@@ -1,0 +1,84 @@
+아파치에 문제있으면! apachectl configtest
+
+CLI 에서 연속적인 명령을 사용할때
+	; - 앞의 명령어가 실패해도 다음 명령어가 실행
+	&& - 앞의 명령어가 성공했을 때 다음 명령어가 실행
+	& - 앞의 명령어를 백그라운드로 돌리고 동시에 뒤의 명령어를 실행
+	!! : 사용자가 직전에 입력한 내용
+	echo $? : 이전 명령어의 반환값 출력
+	명령을 그룹핑할 수 있다.
+	예 ) mkdir test3
+			- mkdir test가
+		&& { cd test3; touch abc; echo 'success!!' }
+			- 성공했을 때 cd test2; touch abc를 실행하고
+				success!!를 출력
+		|| echo 'There is no dir';
+			- 실패했을 때 echo 'There is no dir'를 실행
+
+설명서 : help, man
+cat : 파일내용 불러오기
+head : 파일내용 불러오기 (기본적으로는 10줄만 출력)
+	-n i : i 의 숫자값만큼의 줄만 불러옴
+파이프라인 ( | ) : 뒤에있는 명령의 입력값으로 앞의 내용을 연결해줌
+echo : 사용자 입력 출력
+
+redirection
+	( > ) : 앞의 standard ouput(출력)을 뒤의 개체에 리다이렉션
+		2> : standard error(에러내역) 을 뒤의 개체에 리다이렉션
+			예 ) 명령 > 결과값저장.txt 2> 에러값저장.log
+			2>&1 : 에러값을 표준출력으로 바꿔줌
+		>>(append) : 개체에 얹어서 리다이렉션
+	( < ) : 앞의 개체에 뒤의 standard input(입력)을 리다이렉션
+		<< : 여러 입력을 하나로 합쳐서 리다이렉션
+
+Shell - bash 나 zsh 같이 kernel 을 사용할 수 있는 도구
+	app(shell(kernel(hardware))))
+		- hardware 를 제어하는 kernel 을 제어하는 shell
+
+shell script : shell 프로그램에게 명령할 내용이 프로그래밍 된 내용
+	startup script : 쉘이 실행되면 실행할 명령
+alias : 별명붙여주기
+	 예 ) alias l = ‘ ls -al ‘ : l 이라고 입력하면 ls -al 이 실행됨
+
+process
+ps : 실행중인 프로세스 보기 ( aux 속성 모두보기 )
+top : 실행중인 프로세스 보기 ( ps 보다 좀더 좋음 )
+htop : 컴퓨터 상태 보기 ( cpu core, ram 등 )
+
+파일찾기
+locate : 파일찾기 / 데이터베이스(mlocate)에서 검색
+	- updatedb :  ^ 데이터베이스 정보 업데이트
+find : / (최상위 디렉토리부터),  . ( 현재 디렉토리부터 )
+whereis : 실행프로그램 찾기
+경로 : $PATH
+
+multitasking ( 비동기적인 사용 / background )
+ctrl+z : 프로그램 사용 중에 실행상태로 shell 에 나가기
+	fg : 다시 실행중인 프로그램으로 들어가기
+		%n : n번째 프로그램으로 들어가기
+	jobs : 실행중인 프로그램 확인하기
+shell 에서 명령을 실행할때 맨 뒤에 & 를 붙이면 백그라운드에서 실행이됨
+
+daemon, service : 항상 실행되고있는 프로그램 ( 서버 등 )
+cron : 정기적으로 실행되는 프로그램
+tail : 파일의 맨 마지막 텍스트를 출력 ( -f 속성으로 자동새로고침 )
+
+multi user system ( 다중 사용자 )
+id : 현재 자신을 식별
+who : 현재 시스템에 접속중인 사용자를 식별
+user : 사용자 / 추가 adduser
+group : 그룹 / 추가 groupadd
+permission : 권한 / 사용자가 file 이나 directory 에 대해 할 수 있는 동작
+	구분 : 사용자 / 그룹 / 모든사람
+	파일 :  읽기, 쓰기, 실행
+	디렉토리 : 내부 보기, 내부에서 동작하기, 접근하기
+
+ssh : 원격으로 shell 제어하기 ( secure shell )
+	제어당할 컴퓨터 : ssh server 설치
+	제어할 컴퓨터 : ssh client 설치
+	공개 키 : -keygen 으로 생성 / 키가 있으면 로그인 없이 접속 가능
+	rsync : remote sync 원격으로 동기화하기
+		공개키 설정이 되어있다면 바로 가능함 ( cron 등으로 자동화도 가능 )
+	rsa : 비대칭적인 암호화 중 하나
+		암호화 encrypt <-> decrypt 복호화
+			이때 key 를 이용하여 암호, 복호화를 둘 다 : 대칭적인 방식

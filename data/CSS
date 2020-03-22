@@ -1,0 +1,17 @@
+display 속성
+	- inline, block, grid 등으로 설정 가능
+		grid : 문서 전체를 표처럼 분할
+			-> 단위 : px, fr 등을 사용한다.
+
+컨텐츠와 경계
+	- padding : 컨텐츠 - 경계
+	- margin : 경계 - 전체
+	- border : 경계선 / " border : 선모양 두께 색 ; " 으로 한번에 지정 가능
+
+반응형 디자인 ( Media Query )
+	@media ( max or min-width : px ) {
+		선택자 { }
+	}
+
+CSS에서 파일참조 사용하기
+	<link rel = “stylesheet” href = “ css 문서 ”>

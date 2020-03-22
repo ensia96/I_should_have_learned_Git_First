@@ -16,7 +16,7 @@ class child extends parent {					->parent 클래스를 상속하는 child 클래
 		super( property-p ) ;				->부모클래스의 생성자를 호출한다.
 		내용 ; }						->부모클래스에는 영향을 주지 않는다.
 	func-c ( ) {						->function 키워드를 사용하지 않는다.
-		return super . func-p ( ) + 내용 ; }		->부모클래스의 객체를 호출한다.
+		return super . func-p ( ) + 내용 ; }	->부모클래스의 객체를 호출한다.
 }
 
 inheritance
