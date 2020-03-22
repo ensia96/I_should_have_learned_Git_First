@@ -1,3 +1,4 @@
+<style>
 body {
     margin:0;
 }
@@ -73,3 +74,4 @@ pre {
 .btm {
     font:12px 'Sunflower', sans-serif;
 }
+</style>
