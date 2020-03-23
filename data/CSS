@@ -1,17 +1,102 @@
-display 속성
-	- inline, block, grid 등으로 설정 가능
-		grid : 문서 전체를 표처럼 분할
-			-> 단위 : px, fr 등을 사용한다.
+background-image : 이미지 첨부 ( 크기를 지정하면 표시됨 )
+
+선택자
+	- id = #
+	- class = .
+	- * = 모든 태그
+
+	- class 나 id 가 selector 일때 태그와 결합 가능
+		예 ) 	p.p-tag {
+				color: gray;
+			}
+				-> p태그이면서 p-tag class 이다.
+			p#third-line {
+				  text-decoration: underline;
+			}
+				-> 두 번째는 p태그이면서 third-line id 이다.
+
+			.pre span : "pre" 클래스 내부에 있는 span
+
+			.a div .b .pre span
+				 : a 클래스 밑에, div 밑에, b 클래스 밑에, pre 클래스 밑에 span
+
+	- 구현조건의 우선순위가 있다.
+		-> inline > id > class > tag
+
+	- 선택자를 지정할 때, 태그가 여러 개 있다면,
+		- 선택자 : first-child			->맨위!
+		- 선택자 : last-child			->맨밑!
+		- 선택자 : nth-child(odd)		->홀!
+		- 선택자 : nth-child(even)		->짝!
+
+	- 선택자::속성 -> attribute ( 속성 ) 을 선택자로 지정하고 싶을때
+	- 선택자[type : 타입] -> 특정 타입을 선택자로 지정하고 싶을때
 
 컨텐츠와 경계
 	- padding : 컨텐츠 - 경계
-	- margin : 경계 - 전체
-	- border : 경계선 / " border : 선모양 두께 색 ; " 으로 한번에 지정 가능
+	- margin : 경계 - 전체 / auto로 설정 -> 가로 중앙에 배치 가능
+	- border : 경계선 / " border : 두께 선모양 색 ; " 으로 한번에 지정 가능
 
-반응형 디자인 ( Media Query )
-	@media ( max or min-width : px ) {
-		선택자 { }
-	}
+		- 입력값은 1개 , 2개 ( 상하, 좌우 ) , 4개 ( 상, 우 , 하, 좌 ) 로 표현 가능
 
-CSS에서 파일참조 사용하기
+	- box-sizing : border-box ; 테두리를 기준으로 박스의 크기를 정합니다
+
+위치 지정과 구도
+	# display 속성
+		- inline, block, grid, none 등으로 설정 가능
+			grid : 문서 전체를 표처럼 분할
+				-> 단위 : px, fr 등을 사용한다.
+			- block 요소를 ' display ' 와 ' float ' property 를 이용해서
+				inline 요소의 속성을 지니게 할 수 있다.
+			- inline 요소는 ' display ' property 를 이용해서
+				block 요소의 속성을 지니게 할 수 있다.
+			- none 요소는 숨김기능이다.
+
+	# float 속성
+		- 입력값 : left, right, none
+		- 부모요소가 높이를 인지하지 못해 튀어나오는 경우가 있음.
+
+			해결방법1. 
+			바깥 div(.wecode-box) 마지막에 아무태그나 넣고 clear 속성을 적용합니다.
+			이 기법을 사용할 때에는 HTML코드를 더 입력해야 하는 부담이 있습니다.
+
+			해결방법2.
+			주로 많이 사용하는 방법인데 바깥 div(.wecode-box)에 overflow: hidden; 을 주는 것입니다. 
+
+			해결방법3.
+			바깥 div(.wecode-box)를 float시킵니다.
+			그러면 자식의 float 높이를 인지하여 그만큼 높이를 차지하게 됩니다.
+			하지만 이것도 문제가 있죠, float이 되어버려 block 요소의 성질이 없어지게 됩니다. 이러면 width를 100% 추가하거나 해야합니다.
+
+	# position 속성
+		- relative : 원래 위치에서 이동
+		- absolute : 위치의 절댓값 지정 ( 부모 요소에 대한 절대 위치값 )
+			-> inline 요소처럼 내용의 크기만큼만 범위가 됨
+		- fixed : 부모요소에 상관없는 위치의 절댓값 지장
+			-> 눈에 보이는 브라우저 화면 크기만큼, 화면 내에서만 움직임
+
+채신기술!
+	- 반응형 디자인 ( Media Query )
+
+		@media only screen and ( max or min-width : px ) {
+			선택자 {
+				속성
+			}
+		}
+			+----mediaQuery.scss----------------------------------+
+			|                                                                     |
+			| $phone: "only screen and (max-width: 768px)"; |		<- scss 라는 기술을 이용해, 이런식으로  모듈화도 가능!
+			| $desktop: "screen and (min-width: 769px)";      |			-> https://heropy.blog/2018/01/31/sass/ 참고
+			|                                                                     |
+			+----------------------------------------------------------+
+
+			 -> https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries 참고!
+
+	- 메타 뷰포트
+		-> https://dev.opera.com/articles/an-introduction-to-meta-viewport-and-viewport/
+
+	- 칼럼 이용하기
+		-> http://ko.learnlayout.com/column.html 이런식으로 내용 구성 가능!
+
+CSS 에서 파일참조 사용하기 ( 모듈화 )
 	<link rel = “stylesheet” href = “ css 문서 ”>

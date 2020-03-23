@@ -1,0 +1,20 @@
+html 문서에선 < , > 등의 꺾쇠는 문법취급을 받는다.
+&lt ( less than ) 이나 &gt ( greater than ) 으로 표현
+
+엔터 : &#13;&#10;
+스페이스바 : &nbsp;
+
+blockquote : 인용구문을 넣을 때 쓰는 태그
+
+img : 사진파일을 넣을 때 쓰는 태그
+	alt : 대체 이미지나 문구지정
+	src : 이미지 파일 경로 or 이미지 url 주소
+
+table
+	tr : table row		->테이블 행 묶음
+	td : table data		->테이블 내용 묶음
+	th : table heading	->테이블에 제목 넣기
+
+	- <td>나 <th>태그에
+		->colspan : 열 병합 ( 좌우 )
+		->rowspan : 행 병합 ( 상하 )
