@@ -1,14 +1,7 @@
-CSS
+css velog 4일차 작성하기
 
-플렉스 박스 ( 이해해야함... )
-	-> https://bocoup.com/blog/dive-into-flexbox 
-	-> https://flexboxfroggy.com/#ko ( 개구리잡기로 배워보자 )
+Python repl.it 하기
 
-https://poiemaweb.com/css3-layout
-	- 깔끔한 구성의 레이아웃 연습해보기
-	- 일정구간 이상 내려가면 팝업 띄우는 기능 구현해보기
-	- 크롤링, 웹스크래퍼로 응용해서 구현하기
 
-1. position 속성 - relative, absolute, fixed
-2. inline, inline-block, block 에 대해서
-3. float에 대해서
+js 오류?;
+https://blog.meeta.io/10

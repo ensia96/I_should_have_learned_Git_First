@@ -1,10 +1,12 @@
 number 숫자형
 	int 정수형
 	float 실수형
+	complex number 실수와 허수를 포함하고 있는 복소수
 
 string 문자형
 	' : single quoted
 	" : double quoted
+	대소문자 구분함
 
 boolean 불 자료형
 	참/거짓 / null = false

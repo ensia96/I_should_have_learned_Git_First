@@ -32,6 +32,8 @@ background-image : 이미지 첨부 ( 크기를 지정하면 표시됨 )
 	- 선택자::속성 -> attribute ( 속성 ) 을 선택자로 지정하고 싶을때
 	- 선택자[type : 타입] -> 특정 타입을 선택자로 지정하고 싶을때
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 컨텐츠와 경계
 	- padding : 컨텐츠 - 경계
 	- margin : 경계 - 전체 / auto로 설정 -> 가로 중앙에 배치 가능
@@ -54,7 +56,7 @@ background-image : 이미지 첨부 ( 크기를 지정하면 표시됨 )
 
 	# float 속성
 		- 입력값 : left, right, none
-		- 부모요소가 높이를 인지하지 못해 튀어나오는 경우가 있음.
+		- 부모요소가 높이를 인지하지 못해 자식요소가 부모요소에서 튀어나가는 경우가 있음.
 
 			해결방법1. 
 			바깥 div(.wecode-box) 마지막에 아무태그나 넣고 clear 속성을 적용합니다.
@@ -75,28 +77,153 @@ background-image : 이미지 첨부 ( 크기를 지정하면 표시됨 )
 		- fixed : 부모요소에 상관없는 위치의 절댓값 지장
 			-> 눈에 보이는 브라우저 화면 크기만큼, 화면 내에서만 움직임
 
-채신기술!
-	- 반응형 디자인 ( Media Query )
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-		@media only screen and ( max or min-width : px ) {
-			선택자 {
-				속성
-			}
-		}
-			+----mediaQuery.scss----------------------------------+
-			|                                                                     |
-			| $phone: "only screen and (max-width: 768px)"; |		<- scss 라는 기술을 이용해, 이런식으로  모듈화도 가능!
-			| $desktop: "screen and (min-width: 769px)";      |			-> https://heropy.blog/2018/01/31/sass/ 참고
-			|                                                                     |
-			+----------------------------------------------------------+
+grid 라는 기술은 충분히 매력적입니다.
 
-			 -> https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries 참고!
+하지만, 더 세밀한 표현을 원한다면 flexbox 의 매력에 빠져보는 것도 좋습니다.
 
-	- 메타 뷰포트
-		-> https://dev.opera.com/articles/an-introduction-to-meta-viewport-and-viewport/
 
-	- 칼럼 이용하기
-		-> http://ko.learnlayout.com/column.html 이런식으로 내용 구성 가능!
+
+flexbox 설명을 정리하기 위해 참고한 사이트 : https://bocoup.com/blog/dive-into-flexbox
+	-> 정리를 하면서 느낀점은, ' 이거 외울바에는, 쓸때마다 그냥 찾는게 낫다. ' 입니다.
+		맨 밑에 실습용 개구리 게임이나 하십쇼. 귀여운 개굴띠 ㅇ_< ~*
+
+flexbox
+	- container, line, item으로 구성
+		- 좌->우, 상->하 방향이 기본
+
+	- display 속성에 inline flex 혹은 flex 값을 줘야함
+		-> flex : block 처럼!
+		-> inline flex : inline 처럼!
+
+	- item : conatainer 의 자식요소
+	- line : 기본적으로 하나씩
+		- main axis ( 주축 ) : 좌~우 축
+		- cross axis ( 교차축 ) : 상~하 축
+		- 양 끝점인 start, end 와 direction 으로 이루어짐
+
+container 의 속성들
+
+	% flex-direction : 축 바꾸기~
+		- row : 평범쓰 ( 기본값 )
+		- column: 글을 썼는데, 위에서 아래로?;
+		@ 뒤에 -reverse 를 붙이면, start 랑 end 뒤집기~
+
+	% flex-wrap : line 이 여러개 ?!
+		- nowrap : ( 기본값 )
+		- wrap : line 에 공간이 부족하면 새로운 line 추가!
+			@ 뒤에 -reverse 를 붙이면, 새 line 이 반대편에 생김~
+
+	% flex-flow: [flex-direction] [flex-wrap]
+		예 ) flex-flow: column nowrap;
+
+
+	% justify-content : 주축에서 item 정리하기~
+		-> https://static.bocoup.com/blog/flex-pack.svg
+
+	% align-items : 교차축에서 item 정리하기~
+		-> https://static.bocoup.com/blog/flex-align.svg
+
+	% align-content : line 정리하기~
+
+	+---- 위의 정리하기 삼총사는 이 속성 정리함이 정리했으니, ---+
+	|				안심하라구!					 |
+	|										 |
+	|	- flex-start: 컨테이너의 start 에 정렬			 |
+	|	- flex-end: 컨테이너의 end 에 정렬				 |
+	|	- center: 가운데에 정렬						 |
+	|	- space-between: 여러 줄들 사이에 동일한 간격		 |
+	|	- space-around: 여러 줄들 주위에 동일한 간격		 |
+	|	- stretch: 여러 줄들을 컨테이너에 맞도록 늘림		 |
+	|	- baseline : item 내용의 첫줄을 기준으로 정렬		 |
+	|										 |
+	|	-> 어쨋든 들어갈 수 있는 속성값은 이게 다임		 |
+	|		한번씩 넣어보고 감을 잡는게 좋음			 |
+	+-------------------------------------------------------------------+
+
+
+item
+	- float 속성 써도 container 안에서 item 한테 아무영향 X
+	- main ( 주축) 에 대한 size 와 cross ( 교차축 ) 에 대한 size 가 있음
+
+	# 속성들
+		% order : +1 이나 -1 로 순서정해주깅
+
+		% margin : auto -> 완벽한 정가운데를 원한다면!
+			- margin-right : auto 처럼 입력하면, 나머지들 한쪽으로 밀어버림
+
+		% align-self : align-items 속성을 다르게 주고싶은 item 에 쓰기
+			- stretch 가 기본값이고, 내용은  align-items 랑 똑같음
+
+		% flex : 값
+			- 숫자 : 모든 item 의 값을 더하여 그 숫자만큼 구역을 나눈 뒤,
+				   숫자별로 item 들에 구역을 할당함
+			- initial : 일정크기 이상으로 커지지 않으면서 유동적
+			- auto : 주축 위에서 유동적
+			- none : 어떤 상황에서도 고정적
+
+
+# 실전이다링 개굴개구링~! : https://flexboxfroggy.com/#ko
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+앞으로 다른 언어들에 대한 정리가 이루어지면,
+
+모두 아래와 같은 더 효율적인 방식을 채택하게 된답니다.
+
+모듈화 라는 개념은 더 뒤에서 정리할 예정이지만, 궁금하면 구글링 먼저 !
 
 CSS 에서 파일참조 사용하기 ( 모듈화 )
 	<link rel = “stylesheet” href = “ css 문서 ”>
+
+
+
+웹사이트의 기능과 내용의 가시성의 조화.
+
+요소들의 배치와 구조화에 익숙한 당신을 위한 체계화 지침서 !
+
+레이아웃을 배워보세요!
+
+헤더, 네비게이션,섹션, 어사이드 ( 사이드바 ) , 풋터 구현의 과정
+	 -> https://poiemaweb.com/css3-layout
+
+
+
+
+다양한 장치에서 웹문서를 보는 요즘 !
+
+레이아웃으로 이쁘게 꾸민 사이트의 내용을 가장 잘 전달하려면,
+
+그 사이트를 보고있는 사용자에게 맞춤 서비스를 하는것이 최고 !
+
+' 맞 ' 춤서비스를 제대로 ' 맛 ' 보고싶다면 !
+
+반응형 디자인 ( Media Query )
+	 -> https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
+
+	@media only screen and ( max or min-width : px ) {
+		선택자 {
+			속성
+		}
+	}
+
+		+----mediaQuery.scss----------------------------------+
+		|                                                                     |
+		| $phone: "only screen and (max-width: 768px)"; |		<- scss 라는 기술을 이용해, 이런식으로  모듈화도 가능!
+		| $desktop: "screen and (min-width: 769px)";      |			-> https://heropy.blog/2018/01/31/sass/ 참고
+		|                                                                     |
+		+----------------------------------------------------------+
+
+
+메타 뷰포트 ( Meta Viewport )
+	-> https://dev.opera.com/articles/an-introduction-to-meta-viewport-and-viewport/
+
+
+
+아무리 디지털 시대라 하더라도, 아날로그는 영원하다.
+
+여러 요소속에서 문서의 내용을 더욱 돋보이게 해주고 싶다면 !
+
+칼럼 이용하기 : ↓ 이런식으로 내용 구성 가능! / 신문같은 느낌
+	-> http://ko.learnlayout.com/column.html
