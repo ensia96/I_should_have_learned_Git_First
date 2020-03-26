@@ -41,6 +41,9 @@ list
 	index : del
 	값 : remove
 추가 append
+( element 가 한개 이상일때, + 사용 )
+( 원하는 위치에 element를 삽입 = insert )
+	-> list.insert( "넣고싶은 위치의 index 값" , 내용 )
 
 자료형변환 자료형( )
 
