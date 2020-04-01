@@ -1,0 +1,25 @@
+conditional : 조건문 / if 키워드 사용
+
+if ( a ) : 		a 에는 무조건 boolean ( 값이 있다, 없다로도 조건부여 가능 )
+	b		a 가 True, b 실행
+elif ( c )
+	d		a 가 False, c가 True, d 실행
+else :
+	e		a 가 False, c도 False, e 실행
+
+iterate : 반복문 ( loop ) / for, while 키워드 사용
+
+	반복구문 내에서 동작
+		break : 종료명령 ( 키워드 위치 시점 반복구문 시행 종료 / 값 도출 )
+		continue : 제외하고 실행 ( 키워드 위치 시점 생략 후 반복구문 재개 )
+
+		for 변수 in 배열 : 
+			명령 ;
+	- - - - - - - - - - - - - - - - - - - - - - 
+		 i = 0
+		while ( i < n ) {
+			명령 ;
+			 i = i + 1;
+		}
+
+conprehension : 정리 필요함

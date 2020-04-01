@@ -1,0 +1,11 @@
+velog
+
+줄바꿈
+&#13;&#10;
+
+코드에디터모드
+```
+
+
+- git branch graph 보기좋게 만들기
+	git log --all --graph --oneline

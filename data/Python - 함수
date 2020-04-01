@@ -1,0 +1,18 @@
+input 입력
+	parameter 매개변수
+	argument 인자
+
+output 출력
+	return
+
+결과값 return
+
+def 함수 ( ) :
+명령
+
+출력 print
+사용자 입력 input
+
+자료형변환 자료형( )
+
+type(x)는 x의 자료형을 확인하는 파이썬의 내장 함수이다.
