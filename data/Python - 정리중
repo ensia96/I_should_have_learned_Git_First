@@ -1,14 +1,4 @@
-continue : 명령을 조기종료하고, 다시 순환명령을 실행
-
-break : 명령을 조기종료하고, 그 시점의 결과값을 함수호출인자에 할당
-
-return : 결과값을 함수호출인자에 할당
-
 nesting : 중첩
-
-파이썬의 while 문은 else 문 가능
-While 문의 else 문도 while의 조건문이 False 이면 실행
-즉 기본적인 명령이 담긴 while 문이 종료되면 else 문이 실행된다는 뜻입니다.
 
 Dictionary는 values, item 라는 함수를 속성으로 가지고있다.
 dictionary의 value 들을 리턴
@@ -22,20 +12,6 @@ nested dictionary
 딕셔너리를 임의의 변수의 value 로 맵핑시켜, key value pair 의 형태로 만든 뒤 저장하는 딕셔너리로 만들 수도 있다.
 
 
-간단판별명령
-
-try :
-	에러를 일으킬 것 같은 명령
-except ' 발생가능한 에러종류 ' :
-	핸들러
-else :
-	다른 동작
-
-try 에 동작여부를 판별하고싶은 명령 ( 에러를 일으킬 것 같은 명령 ) 을 입력,
-예상한 에러의 종류를 except 에 지정하여, 출력되지 않도록 ( 예외처리 ) 를 한 뒤, 핸들러를 동작 시킴
-핸들러는 원하는 방식의 에러문구를 지정하거나, else 부에 지정할 다른 동작으로 이동을 유도
-
-except 구문에서 as 를 이용해 좌항에 exception 을 적고, 그 exceiption 에 에러값을 담아 우항에 입력한 값에 할당할 수 있다.
 
 
 decorator : @ 함수이름 -> 어떤 함수 위에 넣으면, decorator 함수를 우선호출
