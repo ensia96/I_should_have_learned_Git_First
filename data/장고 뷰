@@ -1,0 +1,30 @@
+뷰는 Django 어플리케이션이 일반적으로 특정 기능과 템플릿을 제공하는 웹페이지의 한 종류입니다. 예를 들어, 블로그 어플리케이션의 경우 다음과 같은 뷰를 가질 수 있습니다.
+
+Blog 홈페이지 -- 가장 최근의 항목들을 보여줍니다
+항목 "세부"(detail) 페이지 -- 하나의 항목에 연결하는 영구적인 링크(permalink)를 제공합니다.
+년도별 축적 페이지 -- 주어진 연도의 모든 월별 항목들을 표시합니다.
+월별 축적 페이지 -- 주어진 월의 날짜별 항목들을 표시합니다.
+날짜별 축적 페이지 -- 주어진 날짜의 모든 항목들을 표시합니다.
+댓글 기능 -- 특정 항목의 댓글을 다룰 수 있는 기능
+우리가 만드는 poll 어플리케이션에서 다음과 같은 네개의 view 를 만들어 보겠습니다.
+
+질문 "색인" 페이지 -- 최근의 질문들을 표시합니다.
+질문 "세부" 페이지 -- 질문 내용과, 투표할 수 있는 서식을 표시합니다.
+질문 "결과" 페이지 -- 특정 질문에 대한 결과를 표시합니다
+투표 기능 -- 특정 질문에 대해 특정 선택을 할 수 있는 투표 기능을 제공합니다.
+
+
+A view is a “type” of Web page in your Django application that generally serves a specific function and has a specific template. For example, in a blog application, you might have the following views:
+
+Blog homepage – displays the latest few entries.
+Entry “detail” page – permalink page for a single entry.
+Year-based archive page – displays all months with entries in the given year.
+Month-based archive page – displays all days with entries in the given month.
+Day-based archive page – displays all entries in the given day.
+Comment action – handles posting comments to a given entry.
+In our poll application, we’ll have the following four views:
+
+Question “index” page – displays the latest few questions.
+Question “detail” page – displays a question text, with no results but with a form to vote.
+Question “results” page – displays results for a particular question.
+Vote action – handles voting for a particular choice in a particular question.

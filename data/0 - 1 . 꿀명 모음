@@ -30,7 +30,7 @@ python -m django --version
 django-admin startproject "프로젝트명"
 
 
-매니지 파일 마이그레이팅 ( 이주? )
+매니지 파일 마이그레이팅 ( 설정적용 / 동기화 )
 
 python manage.py migrate
 

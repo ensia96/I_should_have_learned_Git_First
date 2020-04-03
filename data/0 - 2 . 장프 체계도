@@ -13,5 +13,7 @@
         ├── tests.py
         ├── urls.py
         ├── views.py
-        └── migration
-            └── __init__.py
+        ├── migrations
+        │   ├── __init__.py
+        └── templates
+              └── __init__.py
