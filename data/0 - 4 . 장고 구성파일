@@ -1,4 +1,6 @@
-mysite/urls.py
+프로젝트/urls.py
+
+-> URL Conf : api 디렉토리별 url 구성 정의
 
 구성 메소드
 
@@ -33,7 +35,9 @@ mysite/urls.py
 
 ===============================================================================
 
-mysite/settings.py
+프로젝트/settings.py
+
+-> project 의 전체적인 설정
 
 설정항목
 
@@ -42,7 +46,12 @@ mysite/settings.py
 				NAME : db 의 파일명을 포함한 절대경로값
 				( 이외에도, USER, PASSWORD, HOST 등의 추가설정 필요 )
 
+	LANGUAGE_CODE : 관리페이지 언어
+			한글쓰! -> LANGUAGE_CODE = 'ko'
+
 	TIME_ZONE : 기준 시간대 설정
+			우리나라 서울쓰! -> TIME_ZONE = 'Asia/Seoul'
+			참고쓰! ->https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 	 INSTALLED_APPS : 현재 Django 인스턴스에서 활성화된 모든 Django 어플리케이션들의 이름 저장.
 					- 다수의 프로젝트에서 사용가능, 패키징하여 배포 가능
@@ -56,7 +65,9 @@ mysite/settings.py
 
 ===============================================================================
 
-mysite/models.py
+프로젝트/models.py
+
+-> django ORM 으로 테이블 정의
 
 	장고의 핵심 기능중 하나인 ORM과 관련 / DB 테이블 정의
 
@@ -70,12 +81,18 @@ mysite/models.py
 		모델에는 클래스와 변수가 있음
 		모델의 각 변수는 DB 필드
 
+		클래스에 table 이름
+		좌항값 : column
+		우항값 : row / models.데이터타입(속성)
+
 ===============================================================================
 
-구성 App 디렉토리/views.py
+앱/views.py
+
+-> 화면에 보여지도록 앱의 로직을 지정 ( 템플릿 렌더링도 됨 )
 
 View
-	웹페이지와 컨텐츠를 전달
+	DB ( 모델 )에서 웹페이지와 컨텐츠를 받아와서 템플릿으로 전달
 	각 view 는 python 함수 ( 메소드, 클래스기반 등 ) 로 정의됨
 	요청된 url ( 도메인 뒷부분 ) 을 조사해, view 를 선택
 
@@ -83,3 +100,9 @@ render()
 request 객체를 첫번째 인수로 받고, 템플릿 이름을 두번째 인수로 받으며,
 context 사전형 객체를 세전째 선택적(optional) 인수로 받습니다.
 인수로 지정된 context로 표현된 템플릿의 HttpResponse 객체가 반환됩니다.
+
+===============================================================================
+
+앱/admin.py
+
+어드민에서 DB 관리할 수 있게 참조시킴

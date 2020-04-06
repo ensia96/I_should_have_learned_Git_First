@@ -17,18 +17,16 @@ CONDA 꿀 명령어!
 -> 가상환경명은 프로젝트 명으로 통일하는 것으로 권장합니다.
 
 
+템플릿태그 : {% 파이썬코드 %} {{ 내용 }}
+
 
 현재 장고버전 확인
 
 python -m django --version
 
+장고 어드민 비번 까먹음
 
-장고 프로젝트
-
-프로젝트 생성
-
-django-admin startproject "프로젝트명"
-
+python manage.py changepassword <user_name>
 
 매니지 파일 마이그레이팅 ( 설정적용 / 동기화 )
 
@@ -37,3 +35,15 @@ python manage.py migrate
 매니지 파일로 서버러닝 ( 구동 )
 
 python manage.py runserver
+
+프로젝트 생성
+
+django-admin startproject "프로젝트명"
+
+기능 생성?
+
+python manage.py startapp polls
+
+settings 값에 맞춰 DB 생성
+
+python3 manage.py makemigrations

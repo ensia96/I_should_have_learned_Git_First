@@ -5,8 +5,21 @@ ASGI -> Asynchronous Server Gateway Interface : 비동기적 서버 구동 환�
  -> 서버의 포트를 변경하고 싶다면, 커맨드라인에서 인수를 전달
 
 
+DB 생성
+app/models.py 에 테이블 구성 ( 클래스명 : 테이블명(models.Model), 좌항 : column, 우항 : row (models.datatype(attribute))
+테이블 구성 끝나면 makemigrations 하고, migrate 해서 DB에 실제 테이블 생성
+app/admin.py 에서 from .model import 테이블명 해야 어드민에 설정됨
 
-migrate 명령
+
+장고 ORM은 필드 이름("title")과 연산자과 필터("contains")를 밑줄 2개(__)를 사용해 구분
+
+쿼리셋 / QuerySet ?
+	-> db 값의 호출형태?
+
+render()
+ -> 매개변수 request ( 사용자가 요청하는 모든 것 ) 와 'blog/post_list.html' 템플릿이 있습니다. {} 템플릿을 사용하기 위해 매개변수를 추가
+
+igrate 명령
 
 	모델의 상태에 맞게 DB 를 롤링
 
