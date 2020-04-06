@@ -1,3 +1,7 @@
+manage.py
+
+	프로젝트의 핵심적인 프로그램 ( 총괄적인 실행자 )
+
 프로젝트/urls.py
 
 -> URL Conf : api 디렉토리별 url 구성 정의
@@ -41,10 +45,37 @@
 
 설정항목
 
+	BASE_DIR : manage.py 가 속한 디렉토리를 구동 상에서 root 디렉토리로 이니셜을 잡아줌
+
+	SECRET_KEY : 암호화키 ( 실 서버에서는 노출되서는 안됨 )
+
+	DEBUG : 개발환경에서만 사용해야함.
+
+	INSTALLED_APPS : 현재 Django 인스턴스에서 활성화된 모든 Django 어플리케이션들의 이름 저장.
+					- 다수의 프로젝트에서 사용가능, 패키징하여 배포 가능
+					- 등록이 되어야만 만든 기능 쓸수 있음
+
+		django.contrib.admin - 관리용 사이트
+		django.contrib.auth - 인증 시스템
+		django.contrib.contenttypes - 컨텐츠 타입을 위한 프레임워크
+		django.contrib.sessions - 세션 프레임워크
+		django.contrib.messages - 메세징 프레임워크
+		django.contrib.staticfiles - 정적 파일담당 프레임워크
+
+	MIDDLEWARE : 나중에 필요한거 아니면 걍 평소에는 위에 두개 주석처리해두는게 좋음.
+
+	ROOT_URLCONF : 기준 url 지정파일 참조
+
+	TEMPLATES : 템플릿 관련 설정
+
+	WSGI_APPLICATION : 앱 구현방식 지정
+
 	DATABASES : DB default 값 설정 가능
 				ENGINE : db 엔진 종류 설정
 				NAME : db 의 파일명을 포함한 절대경로값
 				( 이외에도, USER, PASSWORD, HOST 등의 추가설정 필요 )
+
+	AUTH_PASSWORD_VALIDATORS : 로그인 프로세스의 암호 분별관련 기능
 
 	LANGUAGE_CODE : 관리페이지 언어
 			한글쓰! -> LANGUAGE_CODE = 'ko'
@@ -53,15 +84,8 @@
 			우리나라 서울쓰! -> TIME_ZONE = 'Asia/Seoul'
 			참고쓰! ->https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
-	 INSTALLED_APPS : 현재 Django 인스턴스에서 활성화된 모든 Django 어플리케이션들의 이름 저장.
-					- 다수의 프로젝트에서 사용가능, 패키징하여 배포 가능
-
-		django.contrib.admin - 관리용 사이트
-		django.contrib.auth - 인증 시스템
-		django.contrib.contenttypes - 컨텐츠 타입을 위한 프레임워크
-		django.contrib.sessions - 세션 프레임워크
-		django.contrib.messages - 메세징 프레임워크
-		django.contrib.staticfiles - 정적 파일담당 프레임워크
+	STATIC_URL : 정적문서가 담길 디렉토리 지정
+	STATIC_ROOT : 정적경로 지정
 
 ===============================================================================
 
@@ -84,6 +108,11 @@
 		클래스에 table 이름
 		좌항값 : column
 		우항값 : row / models.데이터타입(속성)
+
+	DB 정의 클래스 내부에 메타 클래스로 테이블명을 지정
+
+		class Meta:
+			db_table = ' 테이블명 '
 
 ===============================================================================
 

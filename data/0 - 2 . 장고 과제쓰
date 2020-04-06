@@ -1,0 +1,53 @@
+위스타그램 엔드포인트 과제
+
+
+1. 위스타그램 댓글을 Post 받는 엔드포인드 구현
+유저 아이디와 댓글내용, 최초 댓글단 시간, 수정시간
+	comment = user_id, comment_text, created, updated
+
+2. 유저 정보 Post/get 엔드포인트
+	위스타그램 로그인 구현
+		 - 로그인
+			성공 return status code 200
+			실패 {“hello”:”world”} 처럼 {“message” : “INVALID_USER” }, status code 401 에러 리턴
+			httpie 로 테스트
+			과제 수행 후 본인의 git repository 를 만들고 commit, push
+
+3. 추가 도전 과제
+ - 1,2번 완료 후 유저 아이디와 댓글 내용을 sqlite3 데이터베이스에 저장 후, 특정 유저의 댓글내용을 전부 리턴하는 GET method 구현
+
+
+========================================================================================
+
+위스타그램 댓글을 Post 받는 엔드포인드 구현
+
+mango / akdrh1133
+
+urls
+
+
+===========================================
+
+views
+
+
+===========================================
+
+settings
+
+
+===========================================
+
+models
+
+댓글 db
+클래스 Comment
+유저 아이디 / user_id :
+댓글 내용 / comment_text :
+작성시간 / created :
+수정시간 / updated :
+
+사용자 db
+클래스 User
+유저 아이디 / user_id :
+유저 비번 / user_pw :

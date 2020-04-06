@@ -1,0 +1,33 @@
+None-Primitive Data Structure(비단순 구조)
+	: 단순한 데이터를 저장하는 구조가 아니라 여러 데이터를 목적에 맞게 효과적으로 저장하는 자료 구조
+
+		Linear Data Structure(선형 구조)
+			: 저장되는 자료의 전후 관계가 1:1 (ex. List, Stacks, Queues)
+
+		- Non-Linear Data Structure(비선형 구조)
+			: 데이터 항목 사이의 관계가 1:n 또는 n:m (ex. Graphs, Trees )
+
+variable 변수
+
+	php : 무조건 $로 시작 / object 객체 취급
+
+container 목록 /element 구성요소 ( 원소 )
+	javascript : array [ ] 배열 / 배열 안에 함수를 저장할 수도 있다.
+
+	php : array ( ) 배열 / $a = array ( 'b', 'c', 'd' )
+
+mapping key, value 값을 묶어 저장하는 개체
+	javascript : object { } 객체
+		- 함수도 객체이다 ( key에 함수, value에 명령 )
+			= 자체로도 값이될 수 있다.
+			= 변수, 매개변수 도 될 수 있다.
+			= return ( 반환값 ) 도 될 수 있다.
+		var 객체 = {
+			“key1” : “value1” ,
+			“key2” : “value2”
+		}
+		객체 [ “ k e y ” ] = “ value ”
+		객체 . key = “ value ”
+		value 값 = 객체 [ key ]
+
+	php : associative 연관배열 ( key 값이 숫자가 아닌 배열 )
