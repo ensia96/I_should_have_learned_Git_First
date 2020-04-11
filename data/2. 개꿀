@@ -17,7 +17,6 @@ velog
 ⟳
 ⟲
 
-
 - git branch graph 보기좋게 만들기
 	git log --all --graph --oneline
 
