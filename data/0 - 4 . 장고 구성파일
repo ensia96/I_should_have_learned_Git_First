@@ -55,14 +55,25 @@ manage.py
 					- 다수의 프로젝트에서 사용가능, 패키징하여 배포 가능
 					- 등록이 되어야만 만든 기능 쓸수 있음
 
-		django.contrib.admin - 관리용 사이트
-		django.contrib.auth - 인증 시스템
+		django.contrib.admin - 장고 자체 관리용 사이트 -> 장고를 API 용으로만 사용할 것이기 때문에 주석처리
+		django.contrib.auth - 장고 자체 사용자 인증 시스템 -> 장고를 API 용으로만 사용할 것이기 때문에 주석처리
 		django.contrib.contenttypes - 컨텐츠 타입을 위한 프레임워크
 		django.contrib.sessions - 세션 프레임워크
 		django.contrib.messages - 메세징 프레임워크
 		django.contrib.staticfiles - 정적 파일담당 프레임워크
 
-	MIDDLEWARE : 나중에 필요한거 아니면 걍 평소에는 위에 두개 주석처리해두는게 좋음.
+
+	MIDDLEWARE
+
+		'django.middleware.security.SecurityMiddleware',
+		'django.contrib.sessions.middleware.SessionMiddleware',
+		'django.middleware.common.CommonMiddleware',
+		'django.middleware.csrf.CsrfViewMiddleware', -> XSS 와 비슷한 방식의 변형페이지 참조 공격을 방지하는 것
+											-> 장고를 API 용으로만 사용할 것이기 때문에 주석처리
+		'django.contrib.auth.middleware.AuthenticationMiddleware', -> 장고 자체 사용자 인증 시스템관련 기능
+													-> 장고를 API 용으로만 사용할 것이기 때문에 주석처리
+		'django.contrib.messages.middleware.MessageMiddleware',
+		'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
 	ROOT_URLCONF : 기준 url 지정파일 참조
 
@@ -107,7 +118,7 @@ manage.py
 
 		클래스에 table 이름
 		좌항값 : column
-		우항값 : row / models.데이터타입(속성)
+		우항값 : row / models.데이터타입(속성) -> 호출형태가 제대로 갖춰지지 않으면 인정 안됨
 
 	DB 정의 클래스 내부에 메타 클래스로 테이블명을 지정
 
