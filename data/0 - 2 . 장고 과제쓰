@@ -1,84 +1,11 @@
 새로운 프로젝트를 구성하고,
 
-스타벅스 query 를 기준으로 model 을 정의하세요.
+스타벅스 query 모델링을 기준으로 프로젝트의 model 을 정의하세요.
 
-.
-├── 음료
-│   ├── data
-│   │   ├── __init__.py
-│   │   ├── __pycache__
-│   │   │   ├── __init__.cpython-38.pyc
-│   │   │   ├── models.cpython-38.pyc
-│   │   │   └── urls.cpython-38.pyc
-│   │   ├── admin.py
-│   │   ├── apps.py
-│   │   ├── models.py
-│   │   ├── tests.py
-│   │   ├── urls.py
-│   │   └── views.py
-│   ├── db.sqlite3
-│   ├── manage.py
-│   └── starbacks
-│       ├── __init__.py
-│       ├── __pycache__
-│       │   ├── __init__.cpython-38.pyc
-│       │   ├── settings.cpython-38.pyc
-│       │   └── urls.cpython-38.pyc
-│       ├── asgi.py
-│       ├── settings.py
-│       ├── urls.py
-│       └── wsgi.py
-└── westagram
-    ├── account
-    │   ├── __init__.py
-    │   ├── __pycache__
-    │   │   ├── __init__.cpython-38.pyc
-    │   │   ├── models.cpython-38.pyc
-    │   │   ├── urls.cpython-38.pyc
-    │   │   └── views.cpython-38.pyc
-    │   ├── admin.py
-    │   ├── apps.py
-    │   ├── migrations
-    │   │   ├── 0001_initial.py
-    │   │   ├── __init__.py
-    │   │   └── __pycache__
-    │   │       ├── 0001_initial.cpython-38.pyc
-    │   │       └── __init__.cpython-38.pyc
-    │   ├── models.py
-    │   ├── tests.py
-    │   ├── urls.py
-    │   └── views.py
-    ├── comment
-    │   ├── __init__.py
-    │   ├── __pycache__
-    │   │   ├── __init__.cpython-38.pyc
-    │   │   ├── models.cpython-38.pyc
-    │   │   ├── urls.cpython-38.pyc
-    │   │   └── views.cpython-38.pyc
-    │   ├── admin.py
-    │   ├── apps.py
-    │   ├── migrations
-    │   │   ├── 0001_initial.py
-    │   │   ├── 0002_comments_contents.py
-    │   │   ├── __init__.py
-    │   │   └── __pycache__
-    │   │       ├── 0001_initial.cpython-38.pyc
-    │   │       ├── 0002_comments_contents.cpython-38.pyc
-    │   │       └── __init__.cpython-38.pyc
-    │   ├── models.py
-    │   ├── tests.py
-    │   ├── urls.py
-    │   └── views.py
-    ├── db.sqlite3
-    ├── manage.py
-    └── westagram
-        ├── __init__.py
-        ├── __pycache__
-        │   ├── __init__.cpython-38.pyc
-        │   ├── settings.cpython-38.pyc
-        │   ├── urls.cpython-38.pyc
-        │   └── wsgi.cpython-38.pyc
-        ├── asgi.py
-        ├── settings.py
-        ├── urls.py
-        └── wsgi.py
+~ 필요할거같은 테이블 생성 ( 완 )
+
+~ 연결관계 정리하고 다듬기 ( 수정중 )
+
+~ 데이터값 넣어서 테스트하기
+
+짜잔!

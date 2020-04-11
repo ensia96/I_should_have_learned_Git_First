@@ -1,3 +1,5 @@
+템플릿태그 : {% 파이썬코드 %} {{ 내용 }}
+
 manage.py 와 같은 디렉토리에 있는 디렉토리만 프로젝트명과 일치하면 됨.
 
 WSGI -> Web Server Gateway Interface : 웹서버 구동 환경
@@ -15,9 +17,16 @@ CharField => VARCHAR ( max_length 속성 필요! ) / text input 요소
 BooleanField => checkbox 요소 등
 DateField => 날짜데이터, 달력위젯 / 오늘 기능 있음
 DateTimeField => 날싸+시간까지, 달력위젯 / 오늘 기능 있음
-FloatField => float 데이터
+FloatField => float 형 데이터
+DecimalField => 10진법식 표기 숫자데이터 / float 보다 더 정밀한 수치가 필요할 때 사용쓰!
 IntegerField => int 데이터
 TextField => 텍스트 데이터 ( 길이상관 X )
+
+속성
+null = true
+	null 이라는 데이터 타입에 대한 허용
+blank=true
+	해당 속성을 지닌 column 의 필드들에 대한 공란 허용
 
 엔드포인트 구성의 순서!
 	1. 우선적으로 DB 생성 ( models.py )

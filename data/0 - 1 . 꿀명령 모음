@@ -1,0 +1,48 @@
+CONDA 꿀 명령어!
+
+가상환경 목록
+conda env list
+
+가상환경 생성
+conda create -n "가상환경이름" python=3.7
+
+활성화 / ( 비활성화 = deactivate )
+conda activate "가상환경이름"
+
+삭제
+conda env remove -n "가상환경이름"
+
+익스포트 ( 배포용 yaml 만들기 ) -> ?? 알아봐야됨;
+conda env export> "가상환경이름.yaml"
+
+익스포트한 가상환경 임포트
+conda env create -f "가상환경이름.yaml" 
+
+-> 가상환경명 = 프로젝트 명과 통일 권장
+
+장고 설치 /  버젼확인 ( freeze )
+pip install django
+
+현재 장고버전 확인
+python -m django --version
+
+장고 어드민 비번 까먹었을때
+python manage.py changepassword <user_name>
+
+프로젝트 생성
+django-admin startproject "프로젝트명"
+
+기능 생성?
+python manage.py startapp "기능명"
+
+settings 값에 맞춰 DB정의 명령 생성
+python3 manage.py makemigrations
+
+DB정의 명령 실행
+python manage.py migrate
+
+DB정의 상태 확인
+python manage.py showmigrations
+
+서버 구동
+python manage.py runserver
