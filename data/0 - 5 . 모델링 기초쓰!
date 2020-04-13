@@ -1,3 +1,16 @@
+DB 용어 헷갈릴땐
+
+표 = schema = table
+
+열 = attribute = column = key
+
+행 = record = row = value = tuple = query
+
+queryset
+ - 칼럼값을 key 로 하고, field 의 실제값을 value 로 하는
+   key value pair 들의 집합이 되는 딕셔너리 데이터
+
+
 DB 에 대한 모델링을 할 때,
 
 하향식 : high_level / 고수준 ( 사용자환경 )  -> row level / 저수준 ( 컴퓨팅환경 )
@@ -7,10 +20,15 @@ DB 에 대한 모델링을 할 때,
 
 요구분석 : 사전조사 등의 행위
 
--> 개념적 설계 ( conceptial )
+-> 개념적 설계 ( conceptial ) : E-R model 작성 / 다이어그램화
 
--> 논리적 설계 ( logical )
+	entity 의 스키마화 ( 주 테이블 -> 부속 테이블 )
+	relationship 의 구현
+	다치 ( multi-value ) attribute 에 대한 맵핑
+	n차 관계에 대한 맵핑
 
--> 물리적 설계 ( physical )
+-> 논리적 설계 ( logical ) : DBMS 구조로 변환 / 테이블 설계 및 정규화
+
+-> 물리적 설계 ( physical ) : 컴퓨팅 관련 정의 / 하드웨어적 요소에 최적화
 
 -> 구현

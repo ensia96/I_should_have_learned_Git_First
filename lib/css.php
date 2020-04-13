@@ -7,7 +7,7 @@ a {
     text-decoration:none;
 }
 h1 {
-    font:60px 'Gaegu', cursive;
+    font:60px 'Jua', sans-serif;
     border-bottom:1px solid gray;
     margin:0;
     padding:17px;
