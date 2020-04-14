@@ -1,0 +1,69 @@
+API에서 가장 자주 구현되는 기능 중 하나
+
+Public한 API도 기본적인 인증과 인가를 요구
+
+인증 ( Authentication )
+	- Authentication은 유저의 identification을 확인하는 절차 ( 당연히 유저가 있어야함! )
+
+	- 로그인 기능
+		- 회원가입 ( id, pw 생성 -> pw 암호화 후 DB 에 저장 )
+		- 로그인 ( id, pw 입력 -> 입력받은 pw 를 암호화 -> DB pw 와 비교 )
+		- 로그인에 성공하면 ' access token ' 전송 ( 클라이언트에게 )
+		- request 에 ' access token ' 이 첨부되도록하면, 인증상태 유지 가능!
+
+
+유저 pw 암호화
+	- 절대로! DB 에 그냥 저장하면 안됨!
+	- 단방향 해쉬 함수가 일반적으로 암호화에 사용됨
+
+단방향 해쉬 함수 ( one-way hash function )
+	- 원본 -> digest ( 암호화된 정보 )
+	- 암호화된 메시지로는 원본 메시지를 구할 수 없음! ( 단방향! )
+		- avalance : 실제 암호는 비슷하지만, 암호화를 거치면 전혀 달라지는 현상
+
+	SHA ( security hash algorithm / 보안 해시 알고리즘)
+	- 약점!
+		: 미리 해쉬값들을 계산해 놓은 테이블을 이용한 공격! Rainbow table attack
+			해쉬함수는 암호화가 아닌, 짧은시간에 데이터를 검색하기 위해 설계되었다! ( Remember set 이라고 봐도 됨! )
+			따라서, 암호가 짧은값일 경우엔 여러 경우의 수에 대한 복호화 연산을 매우 빠르게 진행할 수 있다! ( 해킹빨리당함 ! )
+
+	이 약점을 보안하기 위해, 현재 많이 사용되는 암호화 기법은
+		' hashing with salting and key stretching ' ( 소금치기와 키늘리기를 곁들인 해싱 ) 이다.
+
+	salting : 실제로 존재하는 데이터 ( 기준데이터 ) 에 랜덤데이터를 결합연산한 뒤 해싱하는 기법
+	key stretching : 해싱을 한 값을 도출한 뒤, 그 값을 다시 해싱하는 과정을 여러번 반복하는 기법
+			( 사실은 hash cycling 이라는 말이 더 어울릴 정도; )
+
+위 암호화 기법의 구현을 목적으로 만들어진 라이브러리인 ' Bcrypt ' 덕분에 현재 세대에서는 암호화를 매우 편리하게 진행할 수 있다.
+
+bcrypt.hashpw( ' 암호 ' , bcrypt.gensalt() )
+
+hashpw 암호화하기 ( 암호화할 값, 암호화할 방식 )
+gensalt 솔팅하기
+checkpw 값비교하기 ( ' 암호 ' 를 해싱한 값, 비교대상 암호 )
+
+인코딩 -> 2진법화 ( 바이트화 / 바이너리 )
+bytes ( a , ' utf-8 ' )
+a.encode ( ' utf-8 ' )
+
+디코딩 -> 2진법 등 여러 방식으로 저장된 데이터를 다시 복원
+a.decode ( ' utf-8 ' )
+
+로그인에 성공하면 ( 인증이 되면 ) , 암호화된 유저정보 ( token ) 를 응답으로 주는데,
+그 토큰을 ' 인가가 필요한 작업 ' 에서는 복호화하여, 그 유저정보에 대한 인식만 하여 인가여부를 판별한다.
+- 플레인데이터 ( 아무 처리가 되지않은 native data ) 는 서버통신에서 돌아다니지 않게된다
+이때, 자주 사용되는 방식이 JWT ( JSON Web Tokens ) / PyJWT 받으세요... 그냥 JWT 다운받으면 개고생쓰!
+서버와 클라이언트가 주고받는 json 데이터를 암호화하는 방식
+https://stackoverflow.com/c/wecode/images/s/e3383b10-d296-4790-a8e3-e1c9a2daa41d.png
+
+jwt.encode ( payload, key, header 정보 ) -> header 정보를 넘기지 않아도 기본값이 있어서 작동하긴 함
+	header 정보 예시 : algorithm= ' 암호화 방식 ' -> 기본값은 hs256 ( hs512 는 더 높은 수준 )
+jwt.decode ( jwt, key, header 정보 ) -> jwt = 발행했던 jwt token
+
+id /pw 인증방식은 bcrypt 연산으로 프로세스를 무겁게 하기 때문에, 하드웨어 입장에서 훨씬 가벼운 token 인증방식이 더 효율적
+쿠키 등의 인증정보 저장공간에 실재하는 id / pw 정보값이 담기지 않아 보안성이 강함
+토큰은 그 서버에 대하여 한정적으로 적용되기 때문에, 재활용성이 없어 보안성이 강함
+
+인가(Authorization)
+
+인가가 필요한 경우에는 프로젝트의 앱 내부에 있는 apps.py 나 utils.py 같은 파일에 암호화/비교 기능 함수를 정의하고 데코레이터로 사용함.

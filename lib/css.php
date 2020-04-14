@@ -7,24 +7,25 @@ a {
     text-decoration:none;
 }
 h1 {
-    font:60px 'Jua', sans-serif;
+    font:55px 'Jua', sans-serif;
     display:inline-block;
-    margin : 10px;
+    margin : 25px;
 }
 #head {
     display:block;
     border-bottom:1px solid gray;
-    height:90px;
+    height:110px;
 }
 #super {
     float:right;
-    margin-right:8px;
-    margin-top:8px;
+    margin-right:20px;
+    margin-top:20px;
     padding:7px 15px;
     color:#60665f;
     background-color:#d1d1d1;
     border : 1px solid #d1d1d1;
     border-radius: 5px;
+    font:13px 'Jua', sans-serif;
 }
 ul {
     list-style:none;

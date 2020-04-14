@@ -1,6 +1,10 @@
-data structure 2 session 공부하기 ( set, hash )
-
 인증/인가 session 공부하기
+
+westagram 프로젝트에 token 생성까지 구현하기 ( 만료시간 ? )
+
+계정관리 앱에서 utils.py 파일을 생성해서
+
+data structure 2 session 공부하기 ( set, hash )
 
 크롤링 빌보드 과제 하기
 
@@ -19,6 +23,5 @@ css !important 쓰면 최우선순위!
 개발자도구 세션 정리하기
 
 ~ 14일 오전 프로젝트 사이트 정하기
-	- https://www.theborn.co.kr/ => 프론트 클낫띠;
 	- https://www.peterpanz.com/ => 지도 api 크롤링, db 구성 / 기존 페이지 개선을 목표
-	- https://www.baemin.com/ => 백엔드 개꿀띠?;
+	- 삼성
