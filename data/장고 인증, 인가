@@ -3,7 +3,7 @@ API에서 가장 자주 구현되는 기능 중 하나
 Public한 API도 기본적인 인증과 인가를 요구
 
 인증 ( Authentication )
-	- Authentication은 유저의 identification을 확인하는 절차 ( 당연히 유저가 있어야함! )
+	- Authentication 은 유저의 identification을 확인하는 절차 ( 당연히 유저가 있어야함! )
 
 	- 로그인 기능
 		- 회원가입 ( id, pw 생성 -> pw 암호화 후 DB 에 저장 )
@@ -65,5 +65,12 @@ id /pw 인증방식은 bcrypt 연산으로 프로세스를 무겁게 하기 때�
 토큰은 그 서버에 대하여 한정적으로 적용되기 때문에, 재활용성이 없어 보안성이 강함
 
 인가(Authorization)
+	- Authorization 은 유저가 요청하는 request 를 실행할 권한이 있는지 확인하는 절차
+	토큰으로 유저정보의 권한여부를 호출하는 방식으로 가능
 
 인가가 필요한 경우에는 프로젝트의 앱 내부에 있는 apps.py 나 utils.py 같은 파일에 암호화/비교 기능 함수를 정의하고 데코레이터로 사용함.
+
+authentication 절차를 통해 access token을 생성 ( 유저 정보 포함 필수! 예, user id )
+유저가 request를 보낼때 access token 첨부
+서버에서는 복호화하고, 유저정보를 인식하여 database 에서 권한 확인
+권한 여부에 따라 요청을 처리하거나 에러처리 ( 401 )
