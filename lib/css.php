@@ -8,9 +8,23 @@ a {
 }
 h1 {
     font:60px 'Jua', sans-serif;
+    display:inline-block;
+    margin : 10px;
+}
+#head {
+    display:block;
     border-bottom:1px solid gray;
-    margin:0;
-    padding:17px;
+    height:90px;
+}
+#super {
+    float:right;
+    margin-right:8px;
+    margin-top:8px;
+    padding:7px 15px;
+    color:#60665f;
+    background-color:#ffde08;
+    border : 1px solid #ffde08;
+    border-radius: 5px;
 }
 ul {
     list-style:none;

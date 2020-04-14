@@ -6,23 +6,42 @@ WSGI -> Web Server Gateway Interface : 웹서버 구동 환경
 ASGI -> Asynchronous Server Gateway Interface : 비동기적 서버 구동 환경
 	( 장고 3. 버젼 이후 추가 / 기존에 다른 프로그램의 힘을 받다가, 독립적 활용을 위해 등장 )
 
+POST 방식에서는 request.body 에 정보값이 담김
+GET 방식에서는 url 호출값에 내용이 담겨서 request.GET 에 정보값이 담김
+
+try except 구문대신 .get 메소드 사용 가능
+
 기본적으로, runserver 명령은 내부 IP 의 8000 번 포트로 서버구동
 	 -> 서버의 포트를 변경하고 싶다면, 커맨드라인에서 인수를 전달
 
 프로젝트 폴더는 프로젝트에 큰 영향을 주는 변화 외에는 크게 조작 x
 
+지정정보 ( 참조받아올 ) . 관계키 . add ( 참조시킬값 )
+
+select_related( ' 관계 테이블 1 ' , ' 관계 테이블 2 ' ) => 정참조 o2o
+prefetch_related( ' 관계 테이블 1 ' , ' 관계 테이블 2 ' ) => 역참조 o2m, m2m
+
+메인 데이터 테이블의 key 에 맞춰 서브 데이터 테이블에서 저장하는 관계 vs 메인 데이터 테이블에서 foreign key 로 서브 데이터 테이블의 정보값을 가져오는 관계
+
 models 의 타입들!
+- https://docs.djangoproject.com/en/3.0/topics/forms/modelforms/#field-types
 
 CharField => VARCHAR ( max_length 속성 필요! ) / text input 요소
 BooleanField => checkbox 요소 등
 DateField => 날짜데이터, 달력위젯 / 오늘 기능 있음
 DateTimeField => 날싸+시간까지, 달력위젯 / 오늘 기능 있음
-FloatField => float 형 데이터
-DecimalField => 10진법식 표기 숫자데이터 / float 보다 더 정밀한 수치가 필요할 때 사용쓰!
+FloatField => float 형 데이터 / decimal 보다 더 정밀한 수치가 필요할 때 사용쓰!
+DecimalField => 10진법식 표기 숫자데이터
 IntegerField => int 데이터
 TextField => 텍스트 데이터 ( 길이상관 X )
+ForeignKey ( 클래스, on_delete = ' 속성값 ' ) => 클래스에 ''가 있느냐 없느냐 ( 있으면 예약적 실행 )
+OneToOneField => o2o 관계 정의
+ManyToManyField => m2m 관계 정의
 
 속성
+
+CASCADE : 상태를 상속받음
+SET_NULL : 저장 데이터는 유지, 상속관계 key 값만 NULL 설정
 null = true
 	null 이라는 데이터 타입에 대한 허용
 blank=true
@@ -37,7 +56,6 @@ blank=true
 	2. 로직 구성 ( views 에서 )
 
 	3. 로직 참조 지정 ( urls 에서 )
-
 
 장고 ORM은 필드 이름("title")과 연산자과 필터("contains")를 밑줄 2개(__)를 사용해 구분
 

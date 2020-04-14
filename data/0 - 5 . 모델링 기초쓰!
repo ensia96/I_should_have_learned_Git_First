@@ -1,5 +1,10 @@
 DB 용어 헷갈릴땐
 
+class
+entity
+object
+instance
+
 표 = schema = table
 
 열 = attribute = column = key

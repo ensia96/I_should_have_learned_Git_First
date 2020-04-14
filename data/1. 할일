@@ -1,17 +1,10 @@
 1일 1 commit 실천하기!
 
-DB 공부하기
- - 데이터베이스 열혈강의 - 오용철 선생님 ( https://www.youtube.com/watch?v=lFfcGxTSoFI ~ )
- - https://www.bsidesoft.com/?p=4754
+data structure 2 session 공부하기 ( set, hash )
 
-데이터필드 타입
-- https://docs.djangoproject.com/en/3.0/topics/forms/modelforms/#field-types
+인증/인가 session 공부하기
 
-추가질문 -> 상록님
-제품 테이블도 설명 테이블처럼 이름 테이블을 따로 빼는것은 비효율적?
-
-관계정의 테이블 -> 다대다
-관계정의의 중복 등 정규화의 필요이유와 비슷
+크롤링 빌보드 과제 하기
 
 장고 관련내용 ( 잡탕쓰... ) 정리하기
 
@@ -21,6 +14,13 @@ DB 공부하기
 
 맹고와 함께, GAMSUNG CLI...
 
+css !important 쓰면 최우선순위!
+
 춤추는망고와 위대한 개츠비
 
 개발자도구 세션 정리하기
+
+~ 14일 오전 프로젝트 사이트 정하기
+	- https://www.theborn.co.kr/ => 프론트 클낫띠;
+	- https://www.peterpanz.com/ => 지도 api 크롤링, db 구성 / 기존 페이지 개선을 목표
+	- https://www.baemin.com/ => 백엔드 개꿀띠?;

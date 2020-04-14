@@ -9,7 +9,10 @@
         <?php require('lib/css.php');?>
     </head>
     <body>
-        <h1><a href="index.php">문서띠</a></h1>
+        <div id=head>
+            <h1><a href="index.php">1일 1커밋!</a></h1>
+            <pre id="super">	탭←→↑↓↔↕⟳⟲&#13;&#10;git log --all --graph --oneline&#13;&#10;/usr/local/mysql/bin/mysql -uroot -p</pre>
+        </div>
         <div id="grid">
             <ul>
             <div class="butt">
