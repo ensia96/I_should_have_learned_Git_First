@@ -22,8 +22,8 @@ h1 {
     margin-top:8px;
     padding:7px 15px;
     color:#60665f;
-    background-color:#ffde08;
-    border : 1px solid #ffde08;
+    background-color:#d1d1d1;
+    border : 1px solid #d1d1d1;
     border-radius: 5px;
 }
 ul {
