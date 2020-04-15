@@ -1,0 +1,5 @@
+파일생성 명령 등 어떠한 명령이 오던 파일명을 지정하는 구간에 절대경로나 상대경로를 적으면 그대로 적용됨!
+
+css 에서 ' !important ' 쓰면 최우선순위!
+
+https://docs.python.org/ko/3/library/sqlite3.html
