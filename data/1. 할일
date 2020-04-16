@@ -1,14 +1,12 @@
-westagram 프로젝트에 token 생성까지 구현하기 ( 만료시간 ? ) - 계정관리 앱에서 utils.py 파일을 생성해서
-
-data structure 2 session 공부하기 ( set, hash ) -> add 부분은 도대체 무슨 쓸모때문인지 모르겠어서 포기
-
-크롤링 스타벅스 과제 하기 -> 제품군 명, 제품 이름, 영양소 추출!
+크롤링 스타벅스 과제 하기 -> ~ 제품군 명, 제품 이름, 영양소 추출! 
+https://www.starbucks.co.kr/menu/drink_view.do?product_cd=17
+https://beomi.github.io/2017/02/27/HowToMakeWebCrawler-With-Selenium/
 
 장고 관련내용 ( 잡탕쓰... ) 정리하기
 
 리눅스 + 터미널 세션 정리하기
 
-깃 기본 세션 정리하기
+깃 기본 세션 정리하
 
 맹고와 함께, GAMSUNG CLI...
 

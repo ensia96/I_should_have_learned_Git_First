@@ -6,9 +6,12 @@ Public한 API도 기본적인 인증과 인가를 요구
 	- Authentication 은 유저의 identification을 확인하는 절차 ( 당연히 유저가 있어야함! )
 
 	- 로그인 기능
-		- 회원가입 ( id, pw 생성 -> pw 암호화 후 DB 에 저장 )
-		- 로그인 ( id, pw 입력 -> 입력받은 pw 를 암호화 -> DB pw 와 비교 )
+		- 회원가입
+			bcrypt.hashpw( payload 의 암호 encode , bcrypt.gensalt( ) ) 후, 디코딩된 상태로 DB 에 저장
+		- 로그인
+			bcrypt.checkpw( payload 의 암호 encode , DB 의 암호 encode ) -> boolean 반환
 		- 로그인에 성공하면 ' access token ' 전송 ( 클라이언트에게 )
+			jwt.encode( 인가여부를 판별할 정보 { ' id ' : ' user . id ' } , 암호화키 SECRET_KEY , 암호화방식 algorithm = ' HS256 ' )
 		- request 에 ' access token ' 이 첨부되도록하면, 인증상태 유지 가능!
 
 
@@ -36,12 +39,6 @@ Public한 API도 기본적인 인증과 인가를 요구
 
 위 암호화 기법의 구현을 목적으로 만들어진 라이브러리인 ' Bcrypt ' 덕분에 현재 세대에서는 암호화를 매우 편리하게 진행할 수 있다.
 
-bcrypt.hashpw( ' 암호 ' , bcrypt.gensalt() )
-
-hashpw 암호화하기 ( 암호화할 값, 암호화할 방식 )
-gensalt 솔팅하기
-checkpw 값비교하기 ( ' 암호 ' 를 해싱한 값, 비교대상 암호 )
-
 인코딩 -> 2진법화 ( 바이트화 / 바이너리 )
 bytes ( a , ' utf-8 ' )
 a.encode ( ' utf-8 ' )
@@ -57,6 +54,7 @@ a.decode ( ' utf-8 ' )
 https://stackoverflow.com/c/wecode/images/s/e3383b10-d296-4790-a8e3-e1c9a2daa41d.png
 
 jwt.encode ( payload, key, header 정보 ) -> header 정보를 넘기지 않아도 기본값이 있어서 작동하긴 함
+payload 실제로 주고받을 json 값
 	header 정보 예시 : algorithm= ' 암호화 방식 ' -> 기본값은 hs256 ( hs512 는 더 높은 수준 )
 jwt.decode ( jwt, key, header 정보 ) -> jwt = 발행했던 jwt token
 
