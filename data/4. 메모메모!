@@ -3,3 +3,41 @@
 css 에서 ' !important ' 쓰면 최우선순위!
 
 https://docs.python.org/ko/3/library/sqlite3.html
+
+맥에서 brew 설치하기!
+https://brew.sh/index_ko
+
+brew install mysql
+pip install django
+pip install django-cors-headers
+pip install mysqlclient
+
+프로젝트 필요요소 기준 저장해두기
+pip freeze > requirements.txt
+
+저장된 필요요소 기준 자동설치하기
+pip install -r requirements.txt
+
+프로젝트 settings 파일 맨 밑에 django-cors-headers 사용 관련 설정 추가
+##CORS
+CORS_ORIGIN_ALLOW_ALL=True
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_METHODS = (
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+)
+CORS_ALLOW_HEADERS = (
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+)
