@@ -15,7 +15,7 @@ function title() {
     if (isset($_GET['id'])) {
         echo htmlspecialchars($_GET['id']);
     } else {
-        echo "어서오세요";
+        echo "코딩생활지침서!";
     }
 }
 function contents() {
@@ -26,7 +26,25 @@ function contents() {
             echo "<p class='no5power'> - 노오력 : ".strlen(file_get_contents('data/'.$_GET['id']))."점</p>";
         }
     } else {
-        echo "Git 공부 늦게해서 공부한 내용 정리한거 올리는 사람입니다.";
+        echo "
+시간약속, 책임감, 팀워크, 새로운 도전
+
+코딩습관
+- sprint 단위로 task 를 관리하자.
+- waterfall 방식으로 구현 후 테스트 하지말자.
+- scrum 방식으로 구간구간 테스트하면서 코딩하자.
+
+팀 프로젝트
+- PR, merge 로 버젼단위 scrum
+- 스탠드업 미팅 습관화하기
+    - 어제 한 것, 오늘 할 것, 막혀있는 부분
+
+Pull Request
+- 테스트 해본 뒤 올리기
+- commit message 는 디테일있게 '제목, 내용'
+- 요청 템플릿 제대로 작성하기
+- 피드백 확인하기
+";
     }
 }
 ?>
