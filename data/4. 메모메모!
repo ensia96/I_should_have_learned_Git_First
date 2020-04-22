@@ -1,13 +1,55 @@
+은우님의 vim setup
+https://www.notion.so/Vim-f543db4489994f3f847796a782fc4b5c
+
 파일생성 명령 등 어떠한 명령이 오던 파일명을 지정하는 구간에 절대경로나 상대경로를 적으면 그대로 적용됨!
 
 css 에서 ' !important ' 쓰면 최우선순위!
 
-https://docs.python.org/ko/3/library/sqlite3.html
+python 에서 sql 다루기
+- https://docs.python.org/ko/3/library/sqlite3.html
 
-request.headers 데이터타입은?
+장고 prefetch_related
+- https://docs.djangoproject.com/en/3.0/ref/models/querysets/#prefetch-related
 
-django-cors-headers
+- https://medium.com/chrisjune-13837/%EB%8B%B9%EC%8B%A0%EC%9D%B4-%EB%AA%B0%EB%9E%90%EB%8D%98-django-prefetch-5d7dd0bd7e15
+
+세션
+- https://www.notion.so/wecode/django-select_related-prefetch_related-dd7c023ea3be4a27b4087c5e385c147f
+
+request.headers 데이터타입?
+
+django-cors-headers 역할?
 
 
-지역저장소들을 모두 삭제 명령어
+지역저장소 삭제 명령어
 git remote rm origin
+
+
+os 모듈은 컴퓨터의 자원에 대해서도 접근이 가능하도록 하는 확장개체이다. ( 컴퓨터 운영체제에 대한 )
+ - dirname : 대상의 path 값
+ - abspath : 대상의 절대경로값
+
+sys 모듈은 python 프로그램에 대한 원형 객체 접근방식이다.
+
+__file__ : self 파일
+
+CSV 란 ? -> Comma-separated values
+
+csv.reader()
+인자로 온 항목 ( 파일객체 ) 에 대한 iterator 타입인 reader 객체 ( row 들을 원소로 하는 list ) 를 리턴하는 명령어
+
+open() 명령어에 대하여, 인자1 로 오는 파일에 대해, 인자2 방식의 처리를 하고, 인자3 의 부가적인 설정값을 갖는다.
+
+with as 구문
+
+with open(파일 경로, 모드) as 객체 ( 파일호출자 ) : 
+	동작
+	동작
+	...
+
+형식이며, 구문을 빠져나오는 순간, 자동으로 close 가 된다.
+
+한글포함 csv 파일을 python 에서 읽을때 \ufeff 코드가 들어가면, utf-8 대신 utf-8-sig 방식 인코딩을 하면 됨!
+import csv
+f = open(fname, 'r', encoding='utf-8-sig')
+rdr = csv.reader(f)
