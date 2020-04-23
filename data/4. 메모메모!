@@ -1,6 +1,12 @@
 은우님의 vim setup
 https://www.notion.so/Vim-f543db4489994f3f847796a782fc4b5c
 
+장고 settings, 비밀변수 분리
+http://blog.weirdx.io/post/30707
+
+장고 개발관련글
+https://medium.com/%EB%8F%84%EC%84%9C-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8B%A4%EC%A0%84%ED%8E%B8-%EC%9A%94%EC%95%BD/chapter-1-%EC%9E%A5%EA%B3%A0-%EA%B0%9C%EB%B0%9C%EC%9D%98-%EA%B8%B0%EB%B3%B8-%EC%82%AC%ED%95%AD-f34bc323f164
+
 파일생성 명령 등 어떠한 명령이 오던 파일명을 지정하는 구간에 절대경로나 상대경로를 적으면 그대로 적용됨!
 
 css 에서 ' !important ' 쓰면 최우선순위!
@@ -35,6 +41,12 @@ __file__ : self 파일
 
 CSV 란 ? -> Comma-separated values
 
+python csv 공식문서!
+https://docs.python.org/ko/3/library/csv.html
+
+csv 다루기 참고!
+http://pythonstudy.xyz/python/article/207-CSV-%ED%8C%8C%EC%9D%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0
+
 csv.reader()
 인자로 온 항목 ( 파일객체 ) 에 대한 iterator 타입인 reader 객체 ( row 들을 원소로 하는 list ) 를 리턴하는 명령어
 
@@ -53,3 +65,5 @@ with open(파일 경로, 모드) as 객체 ( 파일호출자 ) :
 import csv
 f = open(fname, 'r', encoding='utf-8-sig')
 rdr = csv.reader(f)
+
+↑ 출처 : https://redcarrot.tistory.com/216

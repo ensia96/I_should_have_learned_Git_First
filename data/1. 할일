@@ -1,10 +1,21 @@
+wecode 1주차 프로젝트 중!
+
+장고 ORM 방식 CRUD
+https://wayhome25.github.io/django/2017/04/01/django-ep9-crud/
+
+
+
+개츠비에 기능추가하기
+ - https://im-developer.tistory.com/98 ( 스크롤 이벤트 )
+ - 메인화면에 태그 보였다가 안보였다가!
+
+나중에 리액트도 제대로 공부하기
+ - https://velog.io/@kler/React-Native
+
+
+
 php 문서 내용 벨로그로 옮기고, 벨로그에서 글 다듬기
-
-select_related, prefetch_related 비교분석 글 쓰기
-
-도와주세요! https://im-developer.tistory.com/98
-
-나중에 리액트 https://velog.io/@kler/React-Native
+벨로그에서 다듬은 글 개츠비로 옮기기
 
 장고 관련내용 ( 잡탕쓰... ) 정리하기
 
@@ -17,3 +28,5 @@ select_related, prefetch_related 비교분석 글 쓰기
 춤추는망고와 위대한 개츠비
 
 개발자도구 세션 정리하기
+
+select_related, prefetch_related 비교분석 글 쓰기
