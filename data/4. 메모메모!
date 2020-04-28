@@ -3,6 +3,8 @@ alias 단축키!
 mysql db 생성할때!
 create database <database_name> character set UTF8mb4 collate utf8mb4_bin
 
+mysql 에서 칼럼이 null 값인 테이블을 확인하려면 where 구문에서 = 대신 is 를 사용!
+
 은우님의 vim setup
 https://www.notion.so/Vim-f543db4489994f3f847796a782fc4b5c
 

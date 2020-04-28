@@ -1,0 +1,9 @@
+내가 로컬환경에서 돌린 서버에 접근시키기 위해서
+
+ifconfig 명령어로 내 ip 확인! ( 첫번째로 나오는 항목의 inet 주소 )
+
+프로젝트의 settings 파일의 allowed_hosts 에
+
+*, ip, ip:포트
+
+넣어주기
