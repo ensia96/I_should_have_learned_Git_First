@@ -1,9 +1,24 @@
 alias 단축키!
 
+CLI 에서 뭔가 헤매고 있을땐, tab 을 눌러보자!
+
+m2m 관계에는 select_related 를 사용할수 없다!
+
+공부할것들!
+	https://docs.djangoproject.com/en/3.0/ref/models/querysets/#django.db.models.query.QuerySet.filter
+	https://docs.djangoproject.com/en/3.0/ref/request-response/
+	https://docs.djangoproject.com/en/3.0/ref/models/querysets/#id4
+	https://jupiny.tistory.com/entry/selectrelated%EC%99%80-prefetchrelated
+	https://docs.djangoproject.com/en/3.0/topics/pagination/
+	장고 공식문서 에그리게이트?
+	포스트맨
+	https://evergreen-david.github.io/posts/postman-team-development
+	https://documenter.getpostman.com/view/9816664/SWLcdorr?version=latest#7b6b436a-6b35-46a2-9249-10e23b9c2e9c
+
 리액트 관련 테스트는 codesandbox.io 에서!
 
-mysql db 생성할때!
-create database <database_name> character set UTF8mb4 collate utf8mb4_bin
+mysql db 생성할때 한글깨짐방지!
+create database '이름' character set UTF8mb4 collate utf8mb4_bin
 
 mysql 에서 칼럼이 null 값인 테이블을 확인하려면 where 구문에서 = 대신 is 를 사용!
 

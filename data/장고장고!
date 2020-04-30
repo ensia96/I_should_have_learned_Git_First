@@ -1,0 +1,15 @@
+from django.db.models import Avg, Min, Max, Count, F, Sum
+
+aggregate
+value 와 같이쓰면 group_by : 연관관계에 맞춰서
+
+annotate
+뜻은 주석달기
+F 랑 같이 쓰면 as 처럼
+
+
+질문
+
+get으로 가져온 객체로는 할수 없는것을 하기 위해
+
+filter 로 1개만 가져온 다음에 그것으로 나온 쿼리셋의 0번째 요소를 선택해서 동작해야하는 경우는 어떤식으로 해야 더 좋은 방법이 있을까요?
