@@ -1,3 +1,7 @@
+공부해야해!
+https://www.notion.so/wecode/group-by-query-aggregate-annotate-dc78416d60a94cf0b12b79ad4f056f60
+https://docs.djangoproject.com/en/3.0/topics/db/aggregation/
+
 from django.db.models import Avg, Min, Max, Count, F, Sum
 
 aggregate
@@ -5,7 +9,10 @@ value 와 같이쓰면 group_by : 연관관계에 맞춰서
 
 annotate
 뜻은 주석달기
-F 랑 같이 쓰면 as 처럼
+
+F 는 as 처럼 사용 가능
+
+http://raccoonyy.github.io/django-annotate-and-aggregate-like-as-excel/
 
 
 질문
