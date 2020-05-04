@@ -1,0 +1,34 @@
+#### my_settings.py
+```py
+>
+DATABASES = {
+	'default' : {
+		'ENGINE': 'django.db.backends.mysql',
+			# 어떤 데이터베이스 엔진을 사용할 지!
+		'NAME': 'mango_project',
+  			# MySQL 에서 사용할 데이터베이스의 이름!
+		'USER': 'mango',
+    			# MySQL 사용자의 이름!
+		'PASSWORD': 'akdrh1133',
+      			# MySQL 사용자의 암호!
+		'HOST': 'localhost',
+			# Database 가 어떤 HOST 를 사용할 지!
+		'PORT': '3306',
+  			# Database 가 어떤 PORT 를 사용할 지!
+		'OPTIONS': {'charset': 'utf8mb4'},
+			# 한글지원쓰 / utf 포맷설정
+		'TEST': {
+  			# 테스트 환경 설정쓰
+			'CHARSET': 'utf8mb4',
+			'COLLATION': 'utf8_general_ci'
+		}
+	}
+}
+```
+
+
+프로젝트 필요요소 기준 저장해두기
+pip freeze > requirements.txt
+
+저장된 필요요소 기준 자동설치하기
+pip install -r requirements.txt

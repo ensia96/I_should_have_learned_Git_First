@@ -1,0 +1,17 @@
+단축키
+
+git
+
+gl - pull
+
+gp - push
+
+ga - add
+
+gb - branch
+
+gcm - checkout master
+
+gcmsg - commit -m
+
+gloga - log --oneline --decorate --graph --all
