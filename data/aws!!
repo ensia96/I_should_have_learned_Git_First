@@ -2,7 +2,10 @@ ec2 서버 ssh 접속!
 ssh -i '인증키 파일' ubuntu@ ' 주소 '
 
 rds 접속!
-mysql -h '주소' -u root -p
+mysql -h ' 주소 ' -u root -p
 
 db 정보 빼기! ( 덤프 뜨기! )
 mysqldump -u root -p ' 스키마 ' > ' 파일명 . sql '
+
+db 정보 밀어넣기!
+mysql -h ' 주소 ' -u root -p ' 스키마 ' < ' 파일명 . sql '
