@@ -8,6 +8,10 @@ gp - push
 
 ga - add
 
+gss - status ( gst 도 됨 )
+
+gco - checkout
+
 gb - branch
 
 gcm - checkout master
