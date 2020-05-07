@@ -1,6 +1,60 @@
 ec2 서버 ssh 접속!
 ssh -i '인증키 파일' ubuntu@ ' 주소 '
 
+미니콘다 설치하기!
+https://docs.conda.io/en/latest/miniconda.html 주소에서 linux 용 miniconda ( python 3.x 버젼 ) 을 우클릭해서 링크주소 복사,
+wget ' 복사한 주소 '
+
+미니콘다 설치파일 실행권한 추가하기
+chmod +x Miniconda3-latest-Linux-x86_64.sh
+
+미니콘다 설치파일 실행하기
+./Miniconda3-latest-Linux-x86_64.sh
+
+엔터 누르다가 yes 하면 설치 끝!
+
+CLI 설정 bash 로 바꿔주기
+source .bashrc
+
+업데이트 해주기
+sudo apt-get update
+
+gcc 설치하기
+sudo apt-get install gcc
+
+mysql 클라이언트 설치하기
+sudo apt-get install libmysqlclient-dev
+
+콘다 가상환경 생성하기
+conda create -n ' 가상환경이름 '
+
+conda : command not found 라고 뜨면 아래 내용
+export PATH=~/miniconda3/bin:$PATH
+
+conda activate 가 안된다면 아래 내용
+source ~/miniconda3/etc/profile.d/conda.sh
+
+내 공인아이피
+curl icanhazip.com
+
+깃 클론따고, my_settings 에 db 호스트를 rds 엔드포인트로 바꾸기
+
+rds 인바운드에 ec2 인스턴스 값 집어넣기
+
+server 돌릴 때, 0:8000 으로 돌려서 공인 아이피로 돌리기
+- API 는 ec2 공인아이피 기준으로 받을 수 있음
+
+구니콘 설치하기 ( 배포! )
+pip install gunicorn
+
+구니콘으로 실서버 돌리기
+gunicorn --bind=0:8000 프로젝트.wsgi
+
+nohup gunicorn  --bind=0:8000 프로젝트.wsgi &
+
+파이썬 실행프로세스 확인하기
+ps -ef | grep python
+
 rds 접속!
 mysql -h ' 주소 ' -u root -p
 
