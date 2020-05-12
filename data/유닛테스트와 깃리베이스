@@ -1,0 +1,44 @@
+개발자의 중요한 역할 : 테스트! ( 동작 확인 )
+
+E2E ( UI testing ) : 최종테스트
+	- 직관적이고 쉬움! 확실쓰!
+	- 비용이 크고, 사람이 하기 힘듬!
+
+Integration : 한쪽의 End-Point 에 대한 테스트
+
+Unit : 코드에서 test 할 수 있는 가장 작은 단위 ( code block ) 에 대한 테스트
+	- 코드에 대한 테스트를 하는 코드를 짜는 것!
+
+TDD : Test Driven Development
+
+
+merge
+merge commit ( 다른 변경사항들을 합치기 ) / fast foward ( 변경사항이 하나일때 )
+
+rebase
+git log 의 history 를 깔끔하게 하기 위해
+
+squash ( 합치다 ) rebase 의 대상이 되는 feature 에 대해 여러 커밋을 한 덩어리로 만들어주기
+
+git pull origin master
+
+git rebase -i master mango
+
+git rebase -i mango
+
+pick ( p ) = 살려두기 ( 최초 커밋 ) 
+
+squash ( s ) = 스쿼시하기 ( 나머지 커밋들 )
+
+충돌 고치기
+
+git add .
+
+git rebase --continue ( 리베이스 진행 )
+git rebase --abort ( 리베이스 멈추기 )
+
+리베이스의 충돌을 해결하면 대상 커밋들에 대한 커밋메세지가 생김 ( 다 지우고 실제로 사용할 것만 남겨둬도 됨 )
+
+git push
+
+pr 이였음
