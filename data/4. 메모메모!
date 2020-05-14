@@ -1,10 +1,6 @@
 컨버스 결과물 유튜브! https://youtu.be/0dYvqMhCsy8
 
-alias 단축키!
-
 CLI 에서 뭔가 헤매고 있을땐, tab 을 눌러보자!
-
-m2m 관계에는 select_related 를 사용할수 없다!
 
 공부할것들!
 	https://docs.djangoproject.com/en/3.0/ref/models/querysets/#django.db.models.query.QuerySet.filter
@@ -23,9 +19,6 @@ mysql db 생성할때 한글깨짐방지!
 create database '이름' character set UTF8mb4 collate utf8mb4_bin
 
 mysql 에서 칼럼이 null 값인 테이블을 확인하려면 where 구문에서 = 대신 is 를 사용!
-
-은우님의 vim setup
-https://www.notion.so/Vim-f543db4489994f3f847796a782fc4b5c
 
 장고 settings, 비밀변수 분리
 http://blog.weirdx.io/post/30707

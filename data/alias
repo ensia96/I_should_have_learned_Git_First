@@ -1,21 +1,18 @@
-단축키
+자주쓰는거
 
-git
+gss
 
-gl - pull
+ga
 
-gp - push
+gcmsg
 
-ga - add
+gp
 
-gss - status ( gst 도 됨 )
+gl
 
-gco - checkout
+
+습관들여야하는거!
 
 gb - branch
 
-gcm - checkout master
-
-gcmsg - commit -m
-
-gloga - log --oneline --decorate --graph --all
+gco - checkout

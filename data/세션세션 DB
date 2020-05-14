@@ -1,18 +1,5 @@
-DB ( DataBase ) : 정보처리에 관한 기반시설
-	RDB
-		: 정보들의 구성요소관계 ( relation ) 에 따른 구조를 우선시
-		- Relational DataBase Management System ( 관계형 정보기반 관리 체계 )
-	NoSQL DB
-		: 구조적 정보관리 보다는 분산처리기능을 우선시
-		- No ( usage ) Sturctured Query Language DataBase ( 구조기반구문 미사용 정보기반 )
+블로그에 아직 적지 않은 내용
 
-table
-table = 한 정보집합의 단위
-column = 정보들이 집합이 되도록 해주는 공통적인 구성요소항목집합
-row = 정보단위가 column 의 요소들에 대해 가지고있는 고유의 정보
-2. TABLE이란? Column과 Row 그리고 Primary Key란?
-3. 테이블의 관계 , One to One, One to Many, Many to Many는 무엇인가?
-4. 왜 관계형 테이블을 쓰는가?
-5. 트랜잭션이란? ACID는 무엇인가?
-6. 관계형 데이터베이스 와 비관계형 데이터베이스의 차이는?
-7. ERD구성도로 모델링하기
+- Primary Key란?
+- 왜 관계형 테이블을 쓰는가?
+- 트랜잭션이란? ACID는 무엇인가?

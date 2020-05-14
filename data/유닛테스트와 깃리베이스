@@ -1,3 +1,12 @@
+유닛테스트 관련 공부 자료!
+https://www.notion.so/Unittest-ab08cae80be44e3586108c52039f4a46
+
+유닛 테스트 관련 상록님 자료!
+https://github.com/evergreen-david/django-unit-test/tree/master/book
+
+유닛 테스트 관련 장고 공식문서!
+https://docs.djangoproject.com/en/dev/topics/testing/overview/
+
 개발자의 중요한 역할 : 테스트! ( 동작 확인 )
 
 E2E ( UI testing ) : 최종테스트

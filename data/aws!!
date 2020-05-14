@@ -63,3 +63,8 @@ mysqldump -u root -p ' 스키마 ' > ' 파일명 . sql '
 
 db 정보 밀어넣기!
 mysql -h ' 주소 ' -u root -p ' 스키마 ' < ' 파일명 . sql '
+
+
+s3 와 cloudfront!
+
+2차 프로젝트에서 공부 중!
