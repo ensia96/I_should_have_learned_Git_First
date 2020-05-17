@@ -1,5 +1,37 @@
+1. 컬렉션 타입 지정
+2. 컬렉션 렌더될 순서 지정
+3. 순서에 맞게 list 작성
+4. list 에 대한 filtering 으로 Data Catch
+5. list 에 대한 indexing
+
+
+
+
+1. 기존의 컬렉션 이름용 csv 를 읽은 뒤 list 생성, 셀레니움으로 수집한 컬렉션 명들을 담은 list를 생성
+ㅇ
+2. 위의 list 들의 중복을 없앤 상태의 내용으로 컬렉션 이름용 csv 생성
+ㅇ
+2. 기존에 없던 컬렉션 명으로 디렉토리를 생성
+ㅇ
+3. 내부에 playlist 라는 csv 를 생성 ( 컬렉션 내부의 플레이리스트들에 대한 내용 )
+ㅇ
+4. 내부에 플레이리스트의 이름을 가지는 csv 들을 생성 ( 각 플레이리스트안의 요소에 대한 내용 )
+ㅇ
+
+
+
+
+
+
+자기참조 공부하기
+
+
+
 장고 ORM 방식 CRUD
 https://wayhome25.github.io/django/2017/04/01/django-ep9-crud/
+
+파이썬 3.9 에서 추가된 기능!
+https://medium.com/@martin.heinz/new-features-in-python-3-9-you-should-know-about-14f3c647c2b4
 
 광또선배 프로젝트 레포
 https://github.com/wecode-bootcamp-korea/myfaketrip-backend
