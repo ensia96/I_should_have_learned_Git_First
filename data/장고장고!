@@ -35,6 +35,8 @@ https://github.com/evergreen-david/django-unit-test/tree/master/book
 유닛테스트 노션!
 https://www.notion.so/Unittest-ab08cae80be44e3586108c52039f4a46
 
+유닛테스트에 사용하는 assert 메소드!
+https://docs.python.org/3/library/unittest.html#assert-methods
 
 공부해야해!
 
@@ -75,3 +77,7 @@ m2m 관계에는 select_related 를 사용할수 없다!
 ifconfig 명령어로 내 ip 확인!
 en0 ( 무선인터넷 ) 혹은 en1 ( 유선인터넷 ) 항목의 inet 주소
 https://ko.wikipedia.org/wiki/Ifconfig
+
+응답이라는 객체를 변수에 할당한 뒤에 [] 를 이용해 속성을 부여하면, 응답 객체의 header 에 kvp 가 추가됨
+
+my_settings 에서 db 설정의 test 항목의 kvp 를 MIRROR:default 로 해두면, 유닛 테스트에서 굳이 개체 생성 안해도 됨
