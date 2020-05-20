@@ -6,6 +6,8 @@ https://github.com/evergreen-david/django-unit-test/tree/master/book
 
 유닛 테스트 관련 장고 공식문서!
 https://docs.djangoproject.com/en/dev/topics/testing/overview/
+유닛 테스트 관련 장고 공식문서! - 고급쓰!
+https://docs.djangoproject.com/ko/3.0/topics/testing/advanced/#django.test.utils.setup_test_environment
 
 개발자의 중요한 역할 : 테스트! ( 동작 확인 )
 
