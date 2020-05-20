@@ -8,6 +8,9 @@ https://docs.djangoproject.com/en/3.0/ref/request-response/
 https://stackoverflow.com/questions/11385607/how-to-model-a-timefield-in-django
 https://www.geeksforgeeks.org/timefield-django-models/
 
+장고 성능관련!
+https://show-me-the-money.tistory.com/48
+
 장고 비밀변수 관리!
 http://blog.weirdx.io/post/30707
 
@@ -81,3 +84,13 @@ https://ko.wikipedia.org/wiki/Ifconfig
 응답이라는 객체를 변수에 할당한 뒤에 [] 를 이용해 속성을 부여하면, 응답 객체의 header 에 kvp 가 추가됨
 
 my_settings 에서 db 설정의 test 항목의 kvp 를 MIRROR:default 로 해두면, 유닛 테스트에서 굳이 개체 생성 안해도 됨
+
+https://docs.djangoproject.com/en/3.0/ref/models/querysets/
+
+__in
+
+__contains
+
+.pk
+
+.fieldname

@@ -17,6 +17,10 @@ gb - branch
 
 gco - checkout
 
+gm - merge ( +a ==> --abort )
+
+grb - rebase ( +i ==> -i | +a ==> --abort | +c ==> --continue )
+
 
 소헌님 블로그 박제! ( alias 관련내용 )
 https://soheon-lee.github.io/posts/DevPost/alias

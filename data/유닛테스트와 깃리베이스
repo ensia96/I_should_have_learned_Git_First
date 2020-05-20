@@ -1,13 +1,21 @@
 유닛테스트 관련 공부 자료!
 https://www.notion.so/Unittest-ab08cae80be44e3586108c52039f4a46
 
+유닛 테스트 관련 지훈님 자료!
+https://github.com/ulfrid/unittest_part01/blob/master/just/tests.py
+
 유닛 테스트 관련 상록님 자료!
 https://github.com/evergreen-david/django-unit-test/tree/master/book
 
 유닛 테스트 관련 장고 공식문서!
 https://docs.djangoproject.com/en/dev/topics/testing/overview/
+https://docs.djangoproject.com/en/dev/topics/testing/tools/
+
 유닛 테스트 관련 장고 공식문서! - 고급쓰!
 https://docs.djangoproject.com/ko/3.0/topics/testing/advanced/#django.test.utils.setup_test_environment
+
+유닛 테스트 관련 파이썬 공식문서!
+https://docs.python.org/3/library/unittest.html#assert-methods
 
 개발자의 중요한 역할 : 테스트! ( 동작 확인 )
 
@@ -53,3 +61,8 @@ git rebase --abort ( 리베이스 멈추기 )
 git push
 
 pr 이였음
+
+만약 머지를 요구하는 상황이 발생하면, 커밋을하고 다시 리베이스 진행
+
+리베이스 관련!
+https://feel5ny.github.io/2018/01/05/log_003/
