@@ -41,6 +41,15 @@ https://www.notion.so/Unittest-ab08cae80be44e3586108c52039f4a46
 유닛테스트에 사용하는 assert 메소드!
 https://docs.python.org/3/library/unittest.html#assert-methods
 
+유닛테스트에 사용되는 client 객체!
+https://docs.djangoproject.com/en/3.0/topics/testing/tools/
+
+client 객체에 get 메소드에서 header 를 추가하려면!
+https://stackoverflow.com/questions/5495452/using-basic-http-access-authentication-in-django-testing-framework
+
+장고에서 데코레이터를 테스트하는법!
+https://stackoverflow.com/questions/35271567/how-to-test-a-django-decorator
+
 공부해야해!
 
 	장고 aggregate, annotate ( group by 쿼리 공부 자료! )
