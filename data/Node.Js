@@ -6,6 +6,9 @@ http://sculove.github.io/blog/2018/11/28/to-vscode-in-2019/
 도커?
 https://subicura.com/2017/01/19/docker-guide-for-beginners-1.html
 
+준석님 수업용깃!
+https://github.com/joonseokhu/node-2
+
 camelCase
 snake_case
 
@@ -79,3 +82,17 @@ https://www.w3schools.com/js/js_math.asp
 
 switch 문
 https://www.w3schools.com/js/js_switch.asp
+
+클래스는 객체(object)를 잘 설계하기 위한 틀 / 특정로직을 갖고 있는 행동 ( method ) 와 변경 가능한 상태 ( 멤버 변수 ) 를 가짐
+
+변경 가능한 상태값이자 class내의 컨텍스트에서 어느 곳에서나 사용할 수 있는 변수 => 멤버 변수
+
+객체 내부에서, 해당 객체의 프로퍼티에 접근하려면 " this " 라는 키워드를 사용해야함
+
+cunstructor - 생성자 함수
+
+class로 객체를 생성하는 과정을 '인스턴스화'
+
+객체는 프로퍼티마다 comma(,)로 구분해줘야 했지만, 클래스는 그렇지 않습니다
+
+{} 으로 생긴 모양의 객체를 object literal(객체 리터럴)
