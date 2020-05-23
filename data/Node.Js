@@ -4,6 +4,15 @@ https://blog.azulpintor.io/entry/how-to-set-language-in-vscode-for-kor
 준석님 수업용깃!
 https://github.com/joonseokhu/node-2
 
+준석님 아티클!
+https://hyper.is/
+
+REST 기반 트랜잭션
+https://www.popit.kr/rest-%ea%b8%b0%eb%b0%98%ec%9d%98-%ea%b0%84%eb%8b%a8%ed%95%9c-%eb%b6%84%ec%82%b0-%ed%8a%b8%eb%9e%9c%ec%9e%ad%ec%85%98-%ea%b5%ac%ed%98%84-1%ed%8e%b8/?utm_source=popit&utm_campaign=notice
+
+마이크로서비스 아키텍쳐
+https://futurecreator.github.io/2018/09/14/what-is-microservices-architecture/
+
 camelCase
 snake_case
 
@@ -86,15 +95,13 @@ https://www.w3schools.com/js/js_switch.asp
 
 cunstructor - 생성자 함수
 
-class로 객체를 생성하는 과정을 '인스턴스화'
-
-객체는 프로퍼티마다 comma(,)로 구분해줘야 했지만, 클래스는 그렇지 않습니다
+class로 객체를 생성하는 과정 = '인스턴스화'
 
 {} 으로 생긴 모양의 객체를 object literal(객체 리터럴)
 
 `` = back tick ( 백틱이라고 부름! )
 
-`` 안에서 변수를 사용하려면 ${} 으로 변수를 감싸줘야 합니다
+`` 안에서 변수를 사용하려면 ${} 으로 변수를 감싸줘야함 / python 의 포맷스트링 + 멀티라인 스트링처럼 사용
 
 String 형태의 자료에 대해 조건값에 따른 일치여부를 boolean 으로 반환
 	startsWith
@@ -116,7 +123,7 @@ https://www.quora.com/What-is-the-difference-between-sessionstorage-localstorage
 
 document 객체
 
-document.cookie 로 웹문서의 쿠키를 호출 가능 ( document 클래스의 cookie 속성 )
+document.cookie 로 브라우저의 쿠키를 호출 가능 ( document 클래스의 cookie 속성 )
 
 localStorage, sessionStorage
 	 => 글로벌 변수
@@ -124,6 +131,9 @@ localStorage, sessionStorage
 	값을 수정하거나 추가하고 싶으면, setItem
 
 arrow function 은 callback 함수로 사용할 때 가장 많이 사용
+
+a => b 리턴
+a => {b} 실행
 
 callback = 인자로 전달되는 함수
 
@@ -134,3 +144,9 @@ https://www.w3schools.com/js/js_array_iteration.asp
 Array.map() => 조건값에 맞춰 변조한 배열을 return
 
 Array.forEach() => 배열의 요소들에 대한 동작 실행 / 원래는 return 값 없음 / 구문을 빠져나오고 싶은시점에서 return
+
+for (let i in array){}
+
+iife
+
+Object.keys(object) / valuse, entries

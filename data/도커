@@ -45,3 +45,7 @@ https://stackoverflow.com/c/wecode/questions/271
 https://stackoverflow.com/c/wecode/search?q=docker&mixed=0
 
 ec2 에서는 무조건 sudo!
+
+도커에서 문제가 생기면!
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+https://github.com/occidere/TIL/issues/116
