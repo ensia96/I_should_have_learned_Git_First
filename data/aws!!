@@ -1,3 +1,8 @@
+aws tool kit 관련
+https://docs.aws.amazon.com/ko_kr/toolkit-for-visual-studio/latest/user-guide/tkv-ec2-ami.html
+
+https://github.com/aws/aws-toolkit-visual-studio
+
 ec2 서버 ssh 접속!
 ssh -i '인증키 파일' ubuntu@ ' 주소 '
 

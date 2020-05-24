@@ -10,3 +10,40 @@ fs.readFile 파일 읽기
 fs.readdir 디렉토리 파일들 목록
 
 process.argv 입력값을 리턴함
+
+synchronous 동기적
+asynchronous 비동기적
+
+readFile(path[,options], callback)
+readFileSync(path[,options])
+
+callback = 인자로써의 함수
+
+package manager
+
+express 와 pm2 공부하기!
+
+
+sudo npm install pm2 -g ( pm2 설치 )
+
+pm2
+
+	start 실행파일 ( + --watch 로 감시옵션! + --no-daemon ) /  + --ignore-watch="data/*" data 디렉토리 내부의 전체 내용에 대해서 무시
+	monit
+	list
+	log
+	stop 실행이름
+	kill 모두 종료
+
+this => 소속객체 지정자 / python self 같은
+
+module 객체
+export / import
+
+
+html entities
+
+npm init
+pacakge.json 생성 ( 프로젝트 정보 )
+
+npm install -S ( 프로젝트에서만 사용 )
