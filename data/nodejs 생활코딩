@@ -47,3 +47,5 @@ npm init
 pacakge.json 생성 ( 프로젝트 정보 )
 
 npm install -S ( 프로젝트에서만 사용 )
+
+npm install -S mysql
