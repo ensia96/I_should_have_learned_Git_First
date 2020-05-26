@@ -1,14 +1,87 @@
+트랜지션 / 트랜잭션
+
+ReactNative 는 JavaScript 로 작성한 코드들 ( 컴포넌트 / 코드블록 등 ) 을 모바일 기기가 이해할 수 있도록, 자바나 스위프트와 같은 다른 언어로 연결해주는 브릿지라는 기술을 이용함.
+
+- 브릿지로 인한 연산의 부하로 더 저수준의 언어에 비해서 성능에 약점이 있음 ( PC 게임 개발에 C, C++, C#, Java 와 같은 언어만 쓰이는 것과 비슷하게, 고사양을 요구하는 퀄리티있는 게임 등을 만들기에는 적합하지 않음 )
+
+
+ - 모바일 기기에서는 view 와 text 태그를 씀 ( 웹 브라우저 - html 처럼 모바일 - ReactNative Code 도 정해진 서식이 있음 / 네이티브 코드를 이용한 브릿지를 위해 => 프레임워크 위에서 정해진 명칭을 사용하는 것과 비슷 )
+ - ReactNative 는 StyleSheet ( CSS ) 를 처리하는 내부코드도 동작함
+	인라인 스타일로 styles 라는 단위객체에 프로퍼티 ( 선택자 ) 를 정의해줘야함
+		예 ) <text style={ styles.mango }> 하하 망고망고! </text> + const styles = StyleSheet.creat({mango:{dancing:mango}})
+
+컴포넌트와 함수
+
+함수형에서 클래스형으로 바뀌면 컴포넌트! / function App(){} => class App extends React.component {}
+
+componentDidMount(){}
+
+async / await / promise
+
+state / setState
+
+flexDirection : column ( default = row ) / 요소 정렬방식 ( 세로 vs 가로 )
+
+justifyContent : 요소 위치 정하기
+
+paddingHorizontal : 수평 위치 지정
+paddingVertical : 수직 위치 지정
+
+fontSize : 숫자만 지정하거나 'px' 로 지정
+
+flex : 1 ( 모든공간을 사용 ) / 어떤 태그의 자식요소로써 존재하는 태그의 flex 가 모두 1이면, 서로 같은 비율을 나눠서 사용 => width, height 와 같은 요소를 사용하지 않음 / 플렉스박스
+
+태그 내부에 다른 태그가 없다면 <태그 /> 만으로도 처리가 됨
+
+
+실험 1.
+한 함수에서 하나 이상의 view tag 를 사용하면?
+view 태그가 시작되고 닫힌 뒤의 코드에 대해서 에러를 표시함
+Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment
+
+사용하는 태그
+view : div 와 비슷
+text : span, span, p 와 비슷
+container : body 와 비슷
+
+
+
 리액트 네이티브 한글 튜토리얼
 
 https://meetup.toast.com/posts/191
 https://velog.io/@max9106/React-Native-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EB%84%A4%EC%9D%B4%ED%8B%B0%EB%B8%8Creact-native-%EB%91%90-%EA%B0%80%EC%A7%80-%EB%B0%A9%EB%B2%95-c4k0gxe0tc
 https://zeddios.tistory.com/410
+https://codinghub.tistory.com/47
 
 c compiler 오류가 뜬다면!
 sudo xcode-select -s /Applications/Xcode.app/Contents/Developer/
 
 npm 노드 관련 문제해결
 https://ellapresso.tistory.com/27
+
+안드로이드 스튜디오 설치
+https://developer.android.com/studio/index.html#downloads
+
+모바일기기 스펙
+https://material.io/resources/devices/
+
+모바일기기 점유율
+https://developer.android.com/about/dashboards/index.html?hl=ko
+
+삼성 기기 스킨
+https://developer.samsung.com/galaxy-emulator-skin/guide.html
+
+안드로이드 개발 관련
+https://carmack-kim.tistory.com/45
+
+모바일기기 해상도 통계
+https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
+
+모바일 해상도 관련
+http://designbase.co.kr/sketch-3/
+https://re-build.tistory.com/34
+안드로이드!
+https://medium.com/duckuism/galaxy-s10-emulator-profile-%EB%A7%8C%EB%93%A4%EA%B8%B0-adf6ecf3b8ba
 
 
 해야할일
