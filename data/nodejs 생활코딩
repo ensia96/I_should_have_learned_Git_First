@@ -1,10 +1,43 @@
-여기서부터!
+? [] format
 
-https://opentutorials.org/course/3347/21204
+express generator : express 프로젝트 이니셜 잡아줌!
 
-https://www.youtube.com/watch?v=5oqBI0KhVEU&list=PLuHgQVnccGMAicFFRh8vFFFtLLlNojWUh&index=23
+cookie 설정에서
+Expires 는 언제 사라지도록 할지,
+Max-Age 는 언제까지 있도록 할지 ( 단위는 초! )
+
+Secure 는 https 통신에서만 되도록
+HttpOnly 는 console 에서 호출되지 않고, 통신에서만 사용되도록
+
+Path 는 지정된 경로에서만 유효
+Domain 는 지정된 도메인에서만 유효
+
+acl access control
 
 
+
+Session : 사용자 인증관련
+
+express-session : request 객체의 프로퍼티에 세션객체를 추가해줌
+
+app.use(session({
+//필수옵션
+- secret: 암호키
+- resave: false ( 세션데이터가 바뀌지 전까진 저장소의 값을 저장안함 )
+- saveUninitialized: true ( 세션이 필요하기전까지는 세션을 구동 안함)
+//추가옵션
+- store : 세션에 대한 정보를 저장할 공간
+}))
+
+
+
+localStorage, Indexed DB : 쿠키보다 저장가능한 용량이 큼
+
+hash, salt, key stretching 관련 : PBKDF2 혹은 bcrypt
+
+npm audit fix
+
+npm audit --audit-level high
 
 리터럴 : 정보를 표현하는 방법
 
@@ -26,11 +59,6 @@ readFile(path[,options], callback)
 readFileSync(path[,options])
 
 callback = 인자로써의 함수
-
-package manager
-
-express 와 pm2 공부하기!
-
 
 sudo npm install pm2 -g ( pm2 설치 )
 
@@ -56,4 +84,33 @@ pacakge.json 생성 ( 프로젝트 정보 )
 
 npm install -S ( 프로젝트에서만 사용 )
 
+Application-level middleware
+
+const app = express()
+
+인자로 여러개를 넣으면, 여러개를 등록할 수 있음
+
+use : 미들웨어 등록
+get : get 메소드에 대해서만 사용
+post : post 메소드에 대해서만 사용
+
+router : 경로분배 프로그램
+
+middle ware : 중간매개 프로그램
+ - body parser : http 통신 객체에 payload 를 읽을 수 있도록 해줌
+ - compression : 데이터를 압축시켜서 내보내줌
+ - helmet : 보안관련!
+ - nsp check 로 보안에 취약할 수 있는 모듈을 확인!
+ - ( req, res, next) => {} 형태의 함수들을 모두 미들웨어라고 함
+	req : 요청 / res : 응답 / next : 다음에 호출할 미들웨어
+
+template engine : pug / jade
+
+database integration
+
+pretty url ( clean url, semantic url..)
+
 npm install -S mysql
+
+MySQL 관련 글
+https://velog.io/@max9106/mac%EC%97%90-MySQL-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0-4ck17gzjk3
