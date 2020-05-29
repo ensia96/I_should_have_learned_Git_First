@@ -27,9 +27,15 @@ app.use(session({
 - saveUninitialized: true ( 세션이 필요하기전까지는 세션을 구동 안함)
 //추가옵션
 - store : 세션에 대한 정보를 저장할 공간
+- secure: true ( https 에서만 세션이 유효해짐 )
+- httpOnly : true ( 웹 통신간에만 세션이 유효 / 탈취 불가 )
 }))
 
+session 객체의 save 메소드 ( 인자로온 콜백을 바로 실행 )
 
+federation authentication : 타사인증 => oauth
+
+passportjs
 
 localStorage, Indexed DB : 쿠키보다 저장가능한 용량이 큼
 
