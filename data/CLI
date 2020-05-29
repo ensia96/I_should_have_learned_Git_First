@@ -1,2 +1,17 @@
 lsof -i :포트번호
 kill -9 PID
+
+
+설치된 패키지의 환경변수값 확인
+which 명령어
+
+
+brew 로 컴퓨터 관리하기 좋은 명령어
+
+cleanup
+doctor
+update
+
+
+yarn
+https://medium.com/@pakss328/yarn%EC%9D%B4%EB%9E%80-b4e8edf1638b

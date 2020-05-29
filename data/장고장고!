@@ -1,5 +1,16 @@
+django-cors-headers 역할?
+
+select, prefetch relate
+https://jupiny.tistory.com/entry/selectrelated%EC%99%80-prefetchrelated
+https://medium.com/chrisjune-13837/%EB%8B%B9%EC%8B%A0%EC%9D%B4-%EB%AA%B0%EB%9E%90%EB%8D%98-django-prefetch-5d7dd0bd7e15
+https://www.notion.so/wecode/django-select_related-prefetch_related-dd7c023ea3be4a27b4087c5e385c147f
+
+ORM 방식 CRUD
+https://wayhome25.github.io/django/2017/04/01/django-ep9-crud/
+
 페이지네이션
 https://www.notion.so/Pagination-c80224f8381949a68ce9c139cf3f8726
+https://docs.djangoproject.com/en/3.0/topics/pagination/
 
 요청과 응답!
 https://docs.djangoproject.com/en/3.0/ref/request-response/
@@ -8,28 +19,28 @@ https://docs.djangoproject.com/en/3.0/ref/request-response/
 https://stackoverflow.com/questions/11385607/how-to-model-a-timefield-in-django
 https://www.geeksforgeeks.org/timefield-django-models/
 
-장고 성능관련!
+성능관련!
 https://show-me-the-money.tistory.com/48
 
-장고 비밀변수 관리!
+비밀변수 관리!
 http://blog.weirdx.io/post/30707
 
-장고 범위스트리밍!
+범위스트리밍!
 https://gist.github.com/dcwatson/cb5d8157a8fa5a4a046e
 https://stackoverflow.com/questions/33208849/python-django-streaming-video-mp4-file-using-httpresponse
 https://benwilber.github.io/nginx/rtmp/live/video/streaming/django/2018/10/20/building-a-live-video-streaming-website-part-2-the-applications.html
 
-장고와 AWS S3 / CloudFront!
+AWS S3 / CloudFront!
 https://seulcode.tistory.com/193
 
-장고관련 공부쓰!
+공부쓰!
 https://medium.com/%EB%8F%84%EC%84%9C-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8B%A4%EC%A0%84%ED%8E%B8-%EC%9A%94%EC%95%BD/chapter-1-%EC%9E%A5%EA%B3%A0-%EA%B0%9C%EB%B0%9C%EC%9D%98-%EA%B8%B0%EB%B3%B8-%EC%82%AC%ED%95%AD-f34bc323f164
 
 비동기 채팅 구현으로 웹소켓 공부!
 https://ssungkang.tistory.com/entry/Django-Channels-%EB%B9%84%EB%8F%99%EA%B8%B0%EC%A0%81-%EC%B1%84%ED%8C%85-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0-WebSocket-1
 https://channels.readthedocs.io/en/latest/tutorial/part_1.html
 
-장고와 유닛테스트!
+유닛테스트!
 https://docs.djangoproject.com/en/dev/topics/testing/overview/#module-django.test
 
 유닛테스트 상록님!
@@ -95,6 +106,7 @@ https://ko.wikipedia.org/wiki/Ifconfig
 my_settings 에서 db 설정의 test 항목의 kvp 를 MIRROR:default 로 해두면, 유닛 테스트에서 굳이 개체 생성 안해도 됨
 
 https://docs.djangoproject.com/en/3.0/ref/models/querysets/
+
 
 __in
 

@@ -1,6 +1,3 @@
-vscode 초기설정값 한글로!
-https://blog.azulpintor.io/entry/how-to-set-language-in-vscode-for-kor
-
 준석님 수업용깃!
 https://github.com/joonseokhu/node-2
 
@@ -12,6 +9,9 @@ https://www.popit.kr/rest-%ea%b8%b0%eb%b0%98%ec%9d%98-%ea%b0%84%eb%8b%a8%ed%95%9
 
 마이크로서비스 아키텍쳐
 https://futurecreator.github.io/2018/09/14/what-is-microservices-architecture/
+
+호이스팅(Hoisting)의 개념
+함수 안에 있는 선언들을 모두 끌어올려서 해당 함수 유효 범위의 최상단에 선언하는 것
 
 camelCase
 snake_case

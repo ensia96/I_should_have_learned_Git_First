@@ -99,15 +99,6 @@ expo init 프로젝트명 - 프로젝트 생성
 프로젝트 디렉토리에서 yarn start - 프로젝트 시작
 
 
-설치된 패키지의 환경변수값 확인
-which 명령어
-
-brew 로 컴퓨터 관리하기 좋은 명령어
-
-cleanup
-doctor
-update
-
 
 노드 재설치와 관련된 명령어
 
