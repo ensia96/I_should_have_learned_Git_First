@@ -7,3 +7,5 @@ mysql db 생성할때 문자인코딩 양식 지정
 create database '이름' character set UTF8mb4 collate utf8mb4_bin
 
 mysql 에서 칼럼이 null 값인 테이블을 확인하려면 where 구문에서 = 대신 is 를 사용!
+
+깃허브에 단순하게 이미지 올리고 싶으면 issues 에 img 업로드 후 태그 얻어내기

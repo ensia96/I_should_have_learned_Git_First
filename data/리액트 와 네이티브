@@ -1,4 +1,81 @@
-트랜지션 / 트랜잭션
+node, npm + ' npx '
+
+npx create-react-app 프로젝트명
+
+리액트가 빠른 이유는 소스코드에 처음부터 모든 요소를 포함시키지 않고, 이미 전송된 소스코드에 내용을 추가하거나 제거하는 방식을 사용하기 때문임
+
+JSX : 템플릿 리터럴이 아닌, JS 의 확장된 문법 for react / array + map + jsx 로 공장장이 될 수 있음
+
+es6 표준에선 구조분해할당,  단축 속성명 ( property shorthand )
+
+
+react 는 app.js 에서 생성한 컴포넌트를 public 의 index.html 의 div (id=root) 태그에 넣음 [ vdom ( virtual document object model ) ]
+
+ternary operator : 삼항연산자 ( 조건구문 ) / () ? a:b
+
+fetch
+
+axios .then
+
+async : 이 함수는 비동기적 처리가 일어나야한다는 선언구
+await : 비동기적 처리의 대상을 지정하는 인식자
+
+비동기함수를 정의한 구문을 () 블록으로 감싸서 바로 호출자 () 를 뒤에 붙이면 정의와 동시에 즉시 실행 가능
+
+
+&&
+
+
+redux
+modal
+
+hook
+use effect / state /callback
+
+action
+reducer
+
+
+
+
+
+
+컴포넌트 : html 을 반환하는 함수 / <App /> 과 같은 모양으로 호출 / 이름은 무조건 대문자로 시작해야함
+
+	react 는 한번에 하나의 컴포넌트만 렌더할 수 있음
+
+	props : property / 컴포넌트 ( 함수 ) 의 인자로 들어온 뒤에, 컴포넌트 처리과정에 사용될 수 있음 ( kvp 형태 )
+
+	Class 타입의 컴포넌트는 React 의 Component 원형객체를 extends 하여 생성함
+		 - render 메소드를 사용함
+		 - state 라는 객체를 사용할 수 있음! ( 가변성이 있는 정보를 다루기 위한 객체 )
+			setState 메소드로 상태를 바꿀수 있음 ( 인자로 값이나 함수 / 동작하면 렌더가 다시 실행됨 )
+
+	순환과정 ( life cycle ) : 선렌더 후작업
+		- 생성 : Mounting
+			- render
+			- componentDidMount
+		- 수정 : Updating
+			- setState
+			- componentDidUpdate
+	삭제 : Unmounting
+
+
+npm i prop-types : 프로퍼티의 자료형태와 필수존재여부를 지정하여, 확인할 수 있음
+
+
+
+
+
+
+
+
+
+네이티브 관련
+https://jcon.tistory.com/147 ( 버튼 )
+https://m.blog.naver.com/PostView.nhn?blogId=gi_balja&logNo=221287420761&proxyReferer=https:%2F%2Fwww.google.com%2F
+https://stackoverflow.com/questions/37328942/react-native-change-default-ios-simulator-device
+
 
 ReactNative 는 JavaScript 로 작성한 코드들 ( 컴포넌트 / 코드블록 등 ) 을 모바일 기기가 이해할 수 있도록, 자바나 스위프트와 같은 다른 언어로 연결해주는 브릿지라는 기술을 이용함.
 
@@ -10,15 +87,12 @@ ReactNative 는 JavaScript 로 작성한 코드들 ( 컴포넌트 / 코드블록
 	인라인 스타일로 styles 라는 단위객체에 프로퍼티 ( 선택자 ) 를 정의해줘야함
 		예 ) <text style={ styles.mango }> 하하 망고망고! </text> + const styles = StyleSheet.creat({mango:{dancing:mango}})
 
-컴포넌트와 함수
 
 함수형에서 클래스형으로 바뀌면 컴포넌트! / function App(){} => class App extends React.component {}
 
 componentDidMount(){}
 
 state / setState
-
-props
 
 async / await / promise
 
@@ -45,6 +119,7 @@ Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fr
 
 사용하는 태그
 view : div 와 비슷
+scrollview : 스크롤 가능한 뷰
 text : span, span, p 와 비슷
 container : body 와 비슷
 
@@ -97,13 +172,3 @@ expo 설치 - 운영프로그램
 expo init 프로젝트명 - 프로젝트 생성
 
 프로젝트 디렉토리에서 yarn start - 프로젝트 시작
-
-
-
-노드 재설치와 관련된 명령어
-
-sudo rm -rf /usr/local/lib/node /usr/local/lib/node_modules /var/db/receipts/org.nodejs.*
-
-sudo chown -R $(whoami) $(brew --prefix)/*
-
-brew unlink node && brew link node
