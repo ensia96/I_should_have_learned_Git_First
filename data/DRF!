@@ -1,3 +1,15 @@
 https://www.django-rest-framework.org/
 
 pip install djangorestframework
+
+https://github.com/Dunedan/django-lockdown/issues/10
+
+
+
+Model
+
+
+View => Serializer ( 직렬화 처리기 )
+
+
+URL => Router ( 라우팅 처리기 )
