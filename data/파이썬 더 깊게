@@ -1,3 +1,6 @@
+파이썬의 입출력 객체!
+python io => 스트림과 filelike 로 변환해줌!
+
 파이썬 3.9 에서 추가된 기능!
 https://medium.com/@martin.heinz/new-features-in-python-3-9-you-should-know-about-14f3c647c2b4
 

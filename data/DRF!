@@ -4,12 +4,87 @@ pip install djangorestframework
 
 https://github.com/Dunedan/django-lockdown/issues/10
 
+여기서부터 ㅠㅠㅜ
+https://www.django-rest-framework.org/api-guide/serializers/#validators
 
 
-Model
+
+파이썬의 네이티브한 데이터
+바이너리화 된 데이터
+orm 으로 리턴받은 객체
+스트림양식에 적합한 filelike ( 패킷 혹은 청크단위 )
 
 
-View => Serializer ( 직렬화 처리기 )
+
+Serializer ( 직렬화 처리기 )
+
+serializers.Serializer 는 데이터의 양식이 맞는지 검증, 객체를 딕셔너리로 직렬화해줌 / 단일객체, 여러객체 모두 적용 가능
+
+	1. serializers.py 에서 시리얼라이저 클래스를 생성한 뒤 검증의 기준이 될 모델필드들을 지정 ( serializers.Serializer 를 상속받음 )
+	2. ' 1 ' 에서 생성한 클래스의 인자로 검증할 객체를 넣어서 사용
+	3. ' 2 ' 의 상태에서 .data 로 호출하면 딕셔너리형 객체를 리턴함
+
+	클래스 내에서 함수를 정의하여 직렬화된 정보를 사용할 수 있음
+		def create(self, validated_data) => 클래스 자가상속, sereializers.Seriealizer 에서 상속받을 수 있는 속성인자인 validated_data 설정
+			return 모델클래스.create(**validated_data) => 직렬화된 데이터를 kwargs 형태로 모델클래스의 create 메소드에 인자로써 주입 ( db에 저장됨 )
+		def update(self, instance, validated_data) => 클래스 자가상속, sereializers.Seriealizer 에서 상속받을 수 있는 속성인자인 instance, validated_data 설정
+			instance.주입할필드 = validated_data.get('주입할필드', instance.'주입할필드') => 지정필드에 입력된 정보를 언패킹하여 할당
+			instance.save() => 정보들이 수정된 상태의 데이터 객체를 .save 메소드로 저장 ( db에 저장됨 )
+			return instance => 정보들이 할당되어 수정된 상태의 데이터객체를 리턴
+
+	4. 위에서 create, update 에 대한 처리를 정의해두었다면, 위의 ' 3 ' 의 상태에 .save 메소드를 호출했을때, 실제로 생성과 수정에 대한 처리가 이루어짐
+	5. 별도의 kwargs 를 이용하면 request 에 포함되어 있지 않은 정보를 추가적으로 주입 가능함 ( 사용자나 시간 등 )
+	6. 인스턴스를 저장하는 것이 아니라 , 그냥 사용해야 한다면 def save(self) 로 .save 메소드를 오버라이딩하면 됨! ( validated_data 속성에 직접접근 가능! )
+
+	deserialize 역직렬화를 할 때, validated_data 에 접근하기 위해선 .is_valid() 메소드를 필수적으로 호출해야함.
+	이 과정에서 .is_valid() 가 false 를 리턴했을때, .errors 메소드를 호출해서 key 가 필드명이고, value 가 에러내용이 담긴 리스트인 객체를 리턴받을 수 있음
+		non_field_errors 라는 키워드를 반환하기도 하는데, 일반적인 유효성 검사 오류가 담긴 리스트가 담겨있음
+			=> NON_FIELD_ERRORS_KEY 라는 rest framework 의 설정으로 커스터마이징 될 수 있음
+	.is_valid 메소드는 raise_exception 이라는 선택적 속성을 부여받아, serializers.ValidationError 처리를 할 수 있음
+		=> raise_exception = True 를 부여하면, invalid 상황에서 status code 400 예외처리를 할 수 있음
+	시리얼라이저의 서브클래스를 등록함으로써 필드단위의 판별도 가능!
+		class 임의의_시리얼라이저(serializers.Serializer):
+			임의의필드1 = serializers.필드속성()
+			임의의필드2 = serializers.필드속성()
+			def validate_임의의필드(self, value):
+				if '판별기준': => value 키워드로 필드의 입력값을 사용할 수 있음
+					raise serializers.ValidationError('에러메세지')
+				return value
+		만약, 시리얼라이저의 필드지정선언구에서 required=False 라는 값으로 지정되어있고, 입력값이 없다면 판별과정이 수행되지 않음
+	여러 필드에 대한 판별이 필요할경우 .validate() 라는 메소드를 시리얼라이저의 서브클래스로 등록하면 됨.
+		이 서브클래스는 필드와 값을 딕셔너리형의 인자로 받게됨.
+			class 임의의_시리얼라이저(serializers.Serializer):
+				임의의필드1 = serializers.필드속성()
+				임의의필드2 = serializers.필드속성()
+				임의의필드3 = serializers.필드속성()
+				def validate(self, data):
+					if data[임의의필드] 와 data[임의의필드]에 대한 판별조건:
+						raise.serializers.ValidationError('에러메세지')
+					return data
+	별도의 판별기함수를 생성하여, 시리얼라이저 클래스의 필드등록선언구에서 validators=[판별기함수] 속성을 부여하여 판별할 수 있음
+		def 판별기함수(value):
+			if 판별조건:
+				raise serializers.ValidationError('에러메세지')
+		class 임의의_시리얼라이저(serializers.Serializer):
+			임의의필드1 = serializers.필드속성(validators=[판별기함수])
 
 
-URL => Router ( 라우팅 처리기 )
+Renderer ( 렌더링 처리기 )
+
+renderers.JSONRenderer 는 파이썬의 딕셔너리를 JSON 으로 렌더링 해줌
+
+	1. JSONRenderer() 를 호출한 뒤에 .render 메소드를 호출, 이때 인자는 시리얼라이저가 .data 메소드로 리턴한 객체를 넣음
+	2. 결과는 바이너리화 된 딕셔너리형!
+
+
+Parser ( 구문분석 처리기 )
+
+예시에선 io ( 입출력 객체 ) 로 바이너리화 된 상태의 데이터를 filelike 화 한 뒤에 진행됨
+
+parsers.JSONParser 는 filelike 상태의 정보를 파이썬의 네이티브한 데이터로 구문분석해줌
+
+	1. JSONParser() 를 호출한 뒤에 .parse 메소드를 호출, 이때 인자는 filelike 한 상태의 정보를 넣음
+	2. ' 1 ' 에서 처리된 결과를 seriealizer 에 kwarg 방식을 통해 인자로 넣음 ( data=대상 )
+	3. ' 2 ' 의 상태에서 .is_valid() 메소드를 사용한 뒤 ( return 은 true ), .validated_data 메소드를 사용하면 딕셔너리를 반환함
+
+Router ( 라우팅 처리기 )
