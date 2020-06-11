@@ -9,3 +9,9 @@ create database '이름' character set UTF8mb4 collate utf8mb4_bin
 mysql 에서 칼럼이 null 값인 테이블을 확인하려면 where 구문에서 = 대신 is 를 사용!
 
 깃허브에 단순하게 이미지 올리고 싶으면 issues 에 img 업로드 후 태그 얻어내기
+
+url 좌표 길이가 너무 김, 페이지에 맞추면 안됨
+재활용 안하는 변수 => _ 로 처리해도 됨
+nvim -v
+tig
+ctags_python
