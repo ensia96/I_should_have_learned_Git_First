@@ -1,28 +1,19 @@
 자주쓰는거
 
 gss
-
 ga
-
 gcmsg
-
 gp
-
 gl
-
 glols
-
 gloga
 
 
 습관들여야하는거!
-
 gb - branch
-
 gco - checkout
-
+gd - diff ( +w word )
 gm - merge ( +a ==> --abort )
-
 grb - rebase ( +i ==> -i | +a ==> --abort | +c ==> --continue )
 
 

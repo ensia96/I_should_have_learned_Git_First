@@ -1,0 +1,3 @@
+1000번 문제
+a, b = map(int, input().split())
+print(a+b)
